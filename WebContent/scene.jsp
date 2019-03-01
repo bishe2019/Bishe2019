@@ -1,13 +1,9 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-<title>Njoy Travels a Travel Category Bootstrap responsive Website Template | Contact :: w3layouts</title>
+<title>Njoy Travels a Travel Category Bootstrap responsive Website Template | Single :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <meta name="keywords" content="Njoy Travels Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -75,11 +71,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<!-- Collect the nav links, forms, and other content for toggling -->
 								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 									<ul class="nav navbar-nav">
-										<li><a class="active" href="index.html">主页</a></li>
-										<li><a href="list.html">列表</a></li>
-										<li><a href="hot.html">热门排行</a></li>					
-										<li><a href="typography.html">论坛</a></li>
-										<li><a href="contact.html">联系</a></li>
+										<li><a class="active" href="index.jsp">主页</a></li>
+										<li><a href="list.jsp">列表</a></li>
+										<li><a href="hot.jsp">热门排行</a></li>					
+										<li><a href="typography.jsp">论坛</a></li>
+										<li><a href="contact.jsp">联系</a></li>
 									</ul>	
 									<div class="clearfix"> </div>
 								</div>	
@@ -100,50 +96,95 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		<div class="w3ls-heading">
-			<h2>Contact</h2>	
+			<h2>Single Page</h2>	
 		</div>
 	</div>
 	<!-- //banner -->
-	<!-- contact -->
-	<div class="contact">
+	<!-- single -->
+	<div class="single">
 		<div class="container">
-			<div class="agile-contact-form">
-				<div class="col-md-6 contact-form-left">
-					<div class="w3layouts-contact-form-top">
-						<h3>Get in touch</h3>
-						<p>Pellentesque eget mi nec est tincidunt accumsan. Proin fermentum dignissim justo, vel euismod justo sodales vel. In non condimentum mauris. Maecenas condimentum interdum lacus, ac varius nisl dignissim ac. Vestibulum euismod est risus, quis convallis nisi tincidunt eget. Sed ultricies congue lacus at fringilla.</p>
-					</div>
-					<div class="agileits-contact-address">
-						<ul>
-							<li><i class="fa fa-phone" aria-hidden="true"></i> <span>+1 234 567 8901</span></li>
-							<li><i class="fa fa-phone fa-envelope" aria-hidden="true"></i> <span><a href="mailto:example@email.com">mail@example.com</a></span></li>
-							<li><i class="fa fa-map-marker" aria-hidden="true"></i> <span>Eiusmod Tempor inclore Place,Kingsport 56777.</span></li>
-						</ul>
-					</div>
+			<div class="agileits-single-img">
+				<img src="images/s1.jpg" alt="" />
+				
+				<h4>Suspendisse ornare vitae ex nec aliquam. Nunc et massa ut purus porta euismod quis eu erat. Nam ornare faucibus elit sed tempor. Quisque iaculis odio nibh, et auctor tellus rhoncus vel.</h4>
+				<div class="agileinfo-single-icons">
+					<ul>
+						<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span>Admin</span></a></li>
+						<li><i class="fa fa-calendar" aria-hidden="true"></i><span>04.Nov.2015</span></li>
+						<li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i><span>20 Comments</span></a></li>
+						<li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>300 Likes</span></a></li>
+					</ul>				
 				</div>
-				<div class="col-md-6 contact-form-right">
-					<div class="contact-form-top">
-						<h3>Send us a message</h3>
+				<p>Vestibulum commodo posuere ipsum in elementum. Proin id nibh dictum, ornare purus quis, ullamcorper lectus. Nullam bibendum, dui eu ornare hendrerit, turpis odio tempor nulla, id tempus neque erat finibus risus. Nullam accumsan ipsum at nunc molestie, at pretium ipsum dignissim. Nullam lorem ligula, gravida sit amet tincidunt id, porta non turpis. Vestibulum tincidunt at lectus et egestas. Sed facilisis tempor tellus eget feugiat. Praesent ut est vel metus consequat consequat. Etiam interdum egestas posuere. Quisque at mi eget lorem malesuada ornare non non quam.</p>
+			</div>
+			
+			<!-- comments -->
+			<div class="agileits_three_comments">
+				<h3>Comments</h3>
+				<div class="agileits_three_comment_grid">
+					<div class="agileits_tom">
+						<img src="images/t2.jpg" alt=" " class="img-responsive">
 					</div>
-					<div class="agileinfo-contact-form-grid">
-						<form action="#" method="post">
-							<input type="text" name="Name" placeholder="Name" required="">
-							<input type="email" name="Email" placeholder="Email" required="">
-							<input type="text" name="Telephone" placeholder="Telephone" required="">
-							<textarea name="Message" placeholder="Message" required=""></textarea>
-							<button class="btn1">Submit</button>
-						</form>
+					<div class="agileits_tom_right">
+						<div class="hardy">
+							<h4>David Son</h4>
+							<p>21 June 2016</p>
+						</div>
+						<div class="reply">
+							<a href="#">Reply</a>
+						</div>
+						<div class="clearfix"> </div>
+						<p class="lorem">There are many variations of passages of Lorem Ipsum available,
+						but the majority have suffered alteration in some form, by injected humour, 
+						or randomised words which don't.</p>
 					</div>
+					<div class="clearfix"> </div>
 				</div>
-				<div class="clearfix"> </div>
+				<div class="agileits_three_comment_grid">
+					<div class="agileits_tom">
+						<img src="images/t4.jpg" alt=" " class="img-responsive">
+					</div>
+					<div class="agileits_tom_right">
+						<div class="hardy">
+							<h4>Steve Smith</h4>
+							<p>21 June 2016</p>
+						</div>
+						<div class="reply">
+							<a href="#">Reply</a>
+						</div>
+						<div class="clearfix"> </div>
+						<p class="lorem">There are many variations of passages of lorem ipsum available,
+							but the majority have suffered alteration in some form, by injected humour, 
+							or randomised words which don't.</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="agileits_three_comment_grid">
+					<div class="agileits_tom">
+						<img src="images/t4.jpg" alt=" " class="img-responsive">
+					</div>
+					<div class="agileits_tom_right">
+						<div class="hardy">
+							<h4>Steve Smith</h4>
+							<p>21 June 2016</p>
+						</div>
+						<div class="reply">
+							<a href="#">Reply</a>
+						</div>
+						<div class="clearfix"> </div>
+						<p class="lorem">There are many variations of passages of lorem ipsum available,
+							but the majority have suffered alteration in some form, by injected humour, 
+							or randomised words which don't.</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
 			</div>
-			<div class="w3agile-map">
-				<h3>Find us here</h3>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102623.04862310845!2d-82.59779327009554!3d36.506579763153326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885a856b70074b97%3A0x6f9cc0d30bcc841f!2sKingsport%2C+TN%2C+USA!5e0!3m2!1sen!2sin!4v1471495038514" allowfullscreen=""></iframe>
-			</div>
+			<!-- //comments -->
+			<!-- leave-comments -->
+			
 		</div>
 	</div>
-	<!-- //contact -->
+	<!-- //single -->
 	<!-- footer -->
 	<div class="footer">
 		<div class="container">

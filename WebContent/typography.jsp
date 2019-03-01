@@ -1,10 +1,6 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
 <title>Njoy Travels a Travel Category Bootstrap responsive Website Template | Typography :: w3layouts</title>
@@ -75,11 +71,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<!-- Collect the nav links, forms, and other content for toggling -->
 								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 									<ul class="nav navbar-nav">
-										<li><a class="active" href="index.html">主页</a></li>
-										<li><a href="list.html">列表</a></li>
-										<li><a href="hot.html">热门排行</a></li>					
-										<li><a href="typography.html">论坛</a></li>
-										<li><a href="contact.html">联系</a></li>
+										<li><a class="active" href="index.jsp">主页</a></li>
+										<li><a href="list.jsp">列表</a></li>
+										<li><a href="hot.jsp">热门排行</a></li>					
+										<li><a href="typography.jsp">论坛</a></li>
+										<li><a href="contact.jsp">联系</a></li>
 									</ul>	
 									<div class="clearfix"> </div>
 								</div>	
