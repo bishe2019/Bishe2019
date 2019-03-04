@@ -29,19 +29,9 @@ public class UserDao {
 		}
 		//” œ‰
 		String email = user.getEmail();
+		//≤Œ ˝
+		Object[] params = new Object[] {userName,password,email};
 		//÷¥––sql
-		try {
-			Connection conn = JDBCUtil.getConn();
-			PreparedStatement preparedStatement = (PreparedStatement) conn.prepareStatement(insertUser);
-			preparedStatement.setString(1, userName);
-			preparedStatement.setString(2, password);
-			preparedStatement.setString(3, email);
-			int i = preparedStatement.executeUpdate();
-			JDBCUtil.close(conn);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		JDBCUtil.ExcuteNoQuery(insertUser, params);
 	}
 }
