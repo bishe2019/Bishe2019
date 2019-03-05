@@ -10,6 +10,8 @@ public class Params {
 	private String email;
 	//用户密码
 	private String password;
+	//类型名称
+	private String typeName;
 	
 	public String getSceneName() {
 		return sceneName;
@@ -35,4 +37,11 @@ public class Params {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getTypeName() {
+		return typeName;
+	}
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
+	}
+	
 }

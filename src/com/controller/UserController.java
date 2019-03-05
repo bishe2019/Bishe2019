@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class UserController {
 
 	@GetMapping("/test")
-	public void test() {
+	public String test() {
 		System.out.println("≤‚ ‘≥…π¶");
+		return "login";
 	}
 }

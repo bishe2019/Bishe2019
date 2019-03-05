@@ -62,4 +62,11 @@ public class SceneDao {
 		
 		return sceneList;
 	}
+	
+	//É¾³ý¾°µã
+	public void deleteScene(Integer sceneId) {
+		String deleteScene = "delete from scene where scene_id = ?";
+		Object[] params = new Object[] {sceneId};
+		JDBCUtil.ExcuteNoQuery(deleteScene, params);
+	}
 }
