@@ -17,4 +17,9 @@ public class UserService {
 		userDao.insertUser(user);
 		session.setAttribute("user", user);
 	}
+	
+	public boolean userLogin(User user,HttpSession session) {
+		boolean isHaveUser = userDao.isHaveUser(user, session);
+		return isHaveUser;
+	}
 }

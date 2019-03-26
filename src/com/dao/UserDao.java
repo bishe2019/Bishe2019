@@ -46,11 +46,11 @@ public class UserDao {
 	 * @param params
 	 * @return
 	 */
-	public boolean isHaveUser(Params params) {
+	public boolean isHaveUser(User user,HttpSession session) {
 		String getUser = "select * from user where email = '?' and password = '?'";
 		Boolean isHave = false;
-		String email = params.getEmail();
-		String password = params.getPassword();
+		String email = user.getEmail();
+		String password = user.getPassword();
 		// Œ™√‹¬Îº”√‹
 		try {
 			password = StringUtils.encrypt(password);
@@ -58,9 +58,14 @@ public class UserDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		List<Map<String,Object>> user = JDBCUtil.executeQuery(getUser, email,password);
-		if (user.size() == 1) {
+		List<Map<String,Object>> userList = JDBCUtil.executeQuery(getUser, email,password);
+		if (userList.size() == 1) {
 			isHave = true;
+			Map<String,Object> userMap = userList.get(0);
+			if (userMap.get("user_name") != null) {
+				user.setUserName(String.valueOf(userMap.get("user_name")));
+			}
+			session.setAttribute("user", user);
 		}
 		
 		return isHave;

@@ -17,4 +17,14 @@ public class UserController {
 		userService.userRegister(user, session);
 		return "index";
 	}
+	
+	@GetMapping("/userLogin")
+	public String userLogin(HttpSession session,User user) {
+		boolean isHave = userService.userLogin(user, session);
+		if (isHave) {
+			return "index";
+		}else {
+			return "login_error";
+		}	
+	}
 }
