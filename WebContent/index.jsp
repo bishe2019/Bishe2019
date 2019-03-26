@@ -39,6 +39,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
 </head>
+<%
+
+String path = request.getContextPath();
+String basePath = request.getScheme() + "://"
++ request.getServerName() + ":" + request.getServerPort()
++ path + "/";
+%>
 <body>
 	<!-- banner -->
 	<div class="banner">
@@ -179,7 +186,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 				<div class="col-md-5 w3ls-welcome-img1">
-					<img src="${p.scenePic}" alt=""  width="400" height="300" />
+					<img src="<%=basePath%>images/${p.scenePic}"   width="400" height="300" />
 				</div>
 				<div class="clearfix"> </div>
 			</div>
