@@ -65,6 +65,9 @@ public class UserDao {
 			if (userMap.get("user_name") != null) {
 				user.setUserName(String.valueOf(userMap.get("user_name")));
 			}
+			if (userMap.get("user_id") != null) {
+				user.setUserId((int) userMap.get("user_id"));
+			}
 			session.setAttribute("user", user);
 		}
 		
@@ -75,7 +78,9 @@ public class UserDao {
 	 * ¹Ø×¢ÀàÐÍ
 	 * @param TypeId
 	 */
-	public void subType(Integer TypeId) {
-		
+	public void subType(Integer typeId,User user) {
+		String subType = "insert into favor(user_id,type_id) values(?,?)";
+		Integer userId = user.getUserId();
+		Object[] params = new Object[] {userId,typeId};
 	}
 }
