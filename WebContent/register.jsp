@@ -34,6 +34,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	});
 </script> 
+<script>
+function validate() {
+var pw1 = document.getElementById("password").value;
+var pw2 = document.getElementById("checkPassword").value;
+if(pw1 == pw2) {
+document.getElementById("tishi").innerHTML="<font color='green'>两次密码相同</font>";
+document.getElementById("submit").disabled = false;
+}
+else {
+document.getElementById("tishi").innerHTML="<font color='red'>两次密码不相同</font>";
+document.getElementById("submit").disabled = true;
+}
+}
+</script>
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
@@ -265,9 +279,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  
 				<div class="xiao-userRePassword-box">
 				<span class="xiao-require">*</span>
-						<label for="password">确认密码</label>
+						<label for="checkPassword">确认密码</label>
 					<div class="xiao-userRePassword-input">
-						<input type="password" id="password" name="password" placeholder="请重复输入密码" />
+						<input type="password" id="checkPassword" name="checkPassword" placeholder="请重复输入密码" onkeyup="validate()"/><span id="tishi"></span></p>
 					</div>
 				</div>
 				<div class="xiao-email-box">

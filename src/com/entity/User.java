@@ -30,6 +30,16 @@ public class User implements Serializable {
 	private String password;
 
 	private int phone;
+	
+	private String checkPassword;
+
+	public String getCheckPassword() {
+		return checkPassword;
+	}
+
+	public void setCheckPassword(String checkPassword) {
+		this.checkPassword = checkPassword;
+	}
 
 	@Column(name="user_name")
 	private String userName;

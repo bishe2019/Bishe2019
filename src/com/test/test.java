@@ -32,7 +32,7 @@ public class test {
 //		CommentDao dao = new CommentDao();
 //		dao.insertComment(comment);
 		try {
-			System.out.println(StringUtils.decrypt("fTjRZ88InA7e5HXxmVY7VA=="));
+			System.out.println(StringUtils.decrypt("Q0vYdtyWQ34="));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
