@@ -47,7 +47,7 @@ public class UserDao {
 	 * @return
 	 */
 	public boolean isHaveUser(User user,HttpSession session) {
-		String getUser = "select * from user where email = '?' and password = '?'";
+		String getUser = "select * from user where email = ? and password = ?";
 		Boolean isHave = false;
 		String email = user.getEmail();
 		String password = user.getPassword();
