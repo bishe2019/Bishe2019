@@ -179,7 +179,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 				<div class="col-md-5 w3ls-welcome-img1">
-					<img src="${p.scenePic}" alt="" />
+					<img src="${p.scenePic}" alt=""  width="400" height="300" />
 				</div>
 				<div class="clearfix"> </div>
 			</div>
