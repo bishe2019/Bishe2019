@@ -18,6 +18,12 @@ public class UserService {
 		session.setAttribute("user", user);
 	}
 	
+	/**
+	 * ÓÃ»§µÇÂ¼
+	 * @param user
+	 * @param session
+	 * @return
+	 */
 	public boolean userLogin(User user,HttpSession session) {
 		boolean isHaveUser = userDao.isHaveUser(user, session);
 		return isHaveUser;

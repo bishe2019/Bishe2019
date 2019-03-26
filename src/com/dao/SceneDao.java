@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.util.StringUtils;
+import javax.servlet.http.HttpServletRequest;
 
 import com.entity.Params;
 import com.entity.Scene;
@@ -139,4 +139,14 @@ public class SceneDao {
 		return sceneList;
 	}
 	
+	/**
+	 * 为景点选择类型
+	 * @param sceneId
+	 * @param typeId
+	 */
+	public void selectType(Integer sceneId,Integer typeId) {
+		String selectType = "insert into scene_type(scene_id,type_id) values(?,?)";
+		Object[] params = new Object[] {sceneId,typeId};
+		JDBCUtil.ExcuteNoQuery(selectType, params);
+	}
 }

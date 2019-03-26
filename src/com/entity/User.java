@@ -3,7 +3,6 @@ package com.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
-import org.hibernate.annotations.GenericGenerator;
 
 
 /**
