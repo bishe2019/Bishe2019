@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -83,11 +84,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</nav>		
 						</div>
 						<div class="agileinfo-social-grids">
+							
 							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss"></i></a></li>
-								<li><a href="#"><i class="fa fa-vk"></i></a></li>
+								<li><c:if test="${! empty  user.userId }" >
+									 <a href="personal.jsp">
+						 			<button class="btn btn-primary" data-toggle="modal" >  		            
+                						<td style="font-weight:900;font-size: 100%;color:white;"> ${user.userName }  <td> 	 
+                		 			</button>  
+                	     			</a>
+                	     			<a href = "remove_user">注销</a>      			    
+                					</c:if>   
+                					<c:if test="${empty  user.userId }" >	
+               	    	 			 <a href="login.jsp"><button class="btn btn-primary" data-toggle="modal" >  		           
+                			<td  style="font-weight:900;font-size: 100%;color:white;">未登录</td> 	
+                		 </button>   </a>
+                					 </c:if>    
+                				</li>
+								
 							</ul>
 						</div>
 						<div class="clearfix"> </div>
@@ -156,32 +169,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="w3l-heading">
 				<h2>热门景点</h2>
 			</div>
+			<c:forEach items="${SceneList}" var="p" begin="0" end="1" step="1">
 			<div class="w3-welcome-grids">
 				<div class="col-md-7 w3-welcome-left">
-					<h5>Lorem ipsum dolor sit amet</h5>
-					<p>Ut fringilla euismod sagittis. Cras semper ante sapien, in ornare nisi euismod eu. Morbi dapibus est non leo vestibulum aliquet. Sed viverra nisi pharetra, scelerisque nisi eu, tempus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In pellentesque, lectus at auctor luctus, lacus nibh dignissim ante, sed maximus arcu odio vitae lectus. <span>Phasellus vestibulum velit sed nisi ultricies scelerisque. Vivamus ligula mauris, euismod in dictum id, tempus ac odio. Etiam tristique felis eros, tincidunt interdum elit gravida et. Donec porttitor vehicula tortor, malesuada aliquet nibh finibus ac. Maecenas consectetur nisi ipsum, blandit finibus quam tristique vitae.</span></p>
+					<h5>${p.sceneName}</h5>
+					<p><span>${p.sceneSumamry}</span></span></p>
 					<div class="w3l-button">
-						<a href="single.html">More</a>
+						<a href="${p.sceneId}">More</a>
 					</div>
 				</div>
 				<div class="col-md-5 w3ls-welcome-img1">
-					<img src="images/2.jpg" alt="" />
+					<img src="${p.scenePic}" alt="" />
 				</div>
 				<div class="clearfix"> </div>
 			</div>
-			<div class="w3-welcome-grids w3-welcome-bottom">
-				<div class="col-md-5 w3ls-welcome-img1 w3ls-welcome-img2">
-					<img src="images/3.jpg" alt="" />
-				</div>
-				<div class="col-md-7 w3-welcome-left">
-					<h5>Lorem ipsum dolor sit amet</h5>
-					<p>Ut fringilla euismod sagittis. Cras semper ante sapien, in ornare nisi euismod eu. Morbi dapibus est non leo vestibulum aliquet. Sed viverra nisi pharetra, scelerisque nisi eu, tempus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In pellentesque, lectus at auctor luctus, lacus nibh dignissim ante, sed maximus arcu odio vitae lectus. <span>Phasellus vestibulum velit sed nisi ultricies scelerisque. Vivamus ligula mauris, euismod in dictum id, tempus ac odio. Etiam tristique felis eros, tincidunt interdum elit gravida et. Donec porttitor vehicula tortor, malesuada aliquet nibh finibus ac. Maecenas consectetur nisi ipsum, blandit finibus quam tristique vitae.</span></p>
-					<div class="w3l-button">
-						<a href="single.html">More</a>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
+			</c:forEach>
 		</div>
 	</div>
 	<!-- //welcome -->
@@ -257,36 +259,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<!-- //services -->
 	<!-- news -->
-	<div class="news">
-		<div class="container">
-			<div class="w3l-heading">
-				<h3>热门帖子</h3>
-			</div>
-			<div class="wthree-news-grids">
-				<div class="col-md-5 agile-news-left">
-					<img src="images/4.jpg" alt="" />
-				</div>
-				<div class="col-md-7 agile-news-right">
-					<div class="date-grid">
-						<div class="admin">
-							<a href="#"><i class="fa fa-user" aria-hidden="true"></i>作者</a>
-						</div>
-						<div class="time">
-							<p><i class="fa fa-calendar" aria-hidden="true"></i> 日期</p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="w3-agile-news-info">
-						<a href="single.html">Aenean id lorem <span>efficitur, porttitor</span> eros dapibus</a>
-					</div>
-					<div class="w3l-button">
-						<a href="single.html">更多</a>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
 	<!-- //news -->
 	<!-- newsletter -->
 	<div class="jarallax newsletter">

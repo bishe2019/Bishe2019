@@ -43,23 +43,23 @@ public class SceneDao {
 		}
 		List<Scene> sceneList = new ArrayList<>();
 		List<Map<String,Object>> objList = JDBCUtil.executeQuery(getSceneList.toString());
-		objList.forEach(obj->{
+		for(int j = 0;j < objList.size();j++){
+			Map<String,Object> obj = objList.get(j);
 			Scene scene = new Scene();
 			if (obj.get("scene_name") != null) {
 				scene.setSceneName(String.valueOf(obj.get("scene_name")));
 			}
 			if (obj.get("scene_pic") != null) {
-				scene.setSceneName(String.valueOf(obj.get("scene_pic")));
+				scene.setScenePic(String.valueOf(obj.get("scene_pic")));
 			}
-			if (obj.get("scene_sumamry") != null) {
-				scene.setSceneName(String.valueOf(obj.get("sceneSumamry")));
+			if (obj.get("scene_summary") != null) {
+				scene.setSceneSumamry(String.valueOf(obj.get("scene_summary")));
 			}
 			if (obj.get("scene_type") != null) {
-				scene.setSceneName(String.valueOf(obj.get("sceneType")));
+				scene.setSceneType((int) obj.get("scene_type"));
 			}
 			sceneList.add(scene);
-		});
-		
+		}
 		return sceneList;
 	}
 	
