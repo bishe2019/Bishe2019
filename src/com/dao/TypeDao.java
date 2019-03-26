@@ -47,8 +47,8 @@ public class TypeDao {
 			if (obj.get("type_id") != null) {
 				type.setTypeId((int) obj.get("type_id"));
 			}
-			if (obj.get("type_Name") != null) {
-				type.setTypeName(String.valueOf(obj.get("type_Name")));
+			if (obj.get("type_name") != null) {
+				type.setTypeName(String.valueOf(obj.get("type_name")));
 			}
 			typeList.add(type);
 		});
