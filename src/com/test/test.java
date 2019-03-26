@@ -13,6 +13,8 @@ import com.dao.UserDao;
 import com.entity.Comment;
 import com.entity.User;
 import com.util.JDBCUtil;
+import com.util.StringUtils;
+
 
 
 @Component
@@ -22,13 +24,19 @@ public class test {
 	private static SessionFactory sessionFactory;
 	
 	public static void main(String[] args) {
-		Comment comment = new Comment();
-		comment.setCommentText("aaaa");
-		comment.setSceneId(1);
-		comment.setUserId(1);
-		
-		CommentDao dao = new CommentDao();
-		dao.insertComment(comment);
+//		Comment comment = new Comment();
+//		comment.setCommentText("aaaa");
+//		comment.setSceneId(1);
+//		comment.setUserId(1);
+//		
+//		CommentDao dao = new CommentDao();
+//		dao.insertComment(comment);
+		try {
+			System.out.println(StringUtils.decrypt("fTjRZ88InA7e5HXxmVY7VA=="));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
