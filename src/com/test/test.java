@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+import com.dao.CommentDao;
 import com.dao.UserDao;
+import com.entity.Comment;
 import com.entity.User;
 import com.util.JDBCUtil;
 
@@ -20,9 +22,13 @@ public class test {
 	private static SessionFactory sessionFactory;
 	
 	public static void main(String[] args) {
-		String a = "select * from user order by user_id";
-		List<Map<String,Object>> b = JDBCUtil.executeQuery(a);
-		System.out.println(b);
+		Comment comment = new Comment();
+		comment.setCommentText("aaaa");
+		comment.setSceneId(1);
+		comment.setUserId(1);
+		
+		CommentDao dao = new CommentDao();
+		dao.insertComment(comment);
 	}
 
 }

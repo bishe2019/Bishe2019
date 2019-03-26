@@ -65,4 +65,12 @@ public class UserDao {
 		
 		return isHave;
 	}
+	
+	/**
+	 * ¹Ø×¢ÀàĞÍ
+	 * @param TypeId
+	 */
+	public void subType(Integer TypeId) {
+		
+	}
 }
