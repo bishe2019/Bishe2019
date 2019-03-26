@@ -72,7 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		color: #ff5000;
 		line-height: 50px;
 	}
-	.xiao-username-box{
+	.xiao-userName-box{
 		position: absolute;
 		width: 420px;
 		height: 40px;
@@ -81,18 +81,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		margin-left:80px;
 		font-weight: 700;
 	}
-	.xiao-username-input{
+	.xiao-userName-input{
 		display: inline-block;
 		margin-left: 45px;
 		/*background: green;*/
 	}
-	#username{
+	#userName{
 		height: 35px;
 		width: 290px;
 		border: 2px solid #ccc;
 		border-radius: 5px;
 	}
-	.xiao-userPassword-box{
+	.xiao-password-box{
 		position: absolute;
 		width: 420px;
 		height: 40px;
@@ -101,11 +101,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		margin-left:80px;
 		font-weight: 700;
 	}
-	.xiao-userPassword-input{
+	.xiao-password-input{
 		display: inline-block;
 		margin-left: 61px;
 	}
-	#userPassword{
+	#password{
 		height: 35px;
 		width: 290px;
 		border: 2px solid #ccc;
@@ -131,7 +131,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		border-radius: 5px;
 	}
 
-	.xiao-userEmail-box{
+	.xiao-email-box{
 		position: absolute;
 		width: 420px;
 		height: 40px;
@@ -140,11 +140,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		margin-left:80px;
 		font-weight: 700;
 	}
-	.xiao-userEmail-input{
+	.xiao-email-input{
 		display: inline-block;
 		margin-left: 28px;
 	}
-	#userEmail{
+	#email{
 		height: 35px;
 		width: 290px;
 		border: 2px solid #ccc;
@@ -246,35 +246,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="xiao-title-box">
 				<span>用户注册</span>
 			</div>
-			<form action="#" method="post">
-				<div class="xiao-username-box">
+			<form action="/Bishe_2019/userRegister" method="get">
+				<div class="xiao-userName-box">
 					<span class="xiao-require">*</span>
-					<label for="username">用户名</label>
-					<div class="xiao-username-input">
-						<input type="text" id="username" name="username" placeholder="请输入用户名 长度:6-12个字符" />
+					<label for="userName">用户名</label>
+					<div class="xiao-userName-input">
+						<input type="text" id="userName" name="userName" placeholder="请输入用户名 长度:6-12个字符" />
 					</div>
 				</div>
  
-				<div class="xiao-userPassword-box">
+				<div class="xiao-password-box">
 					<span class="xiao-require">*</span>
-					<label for="userPassword">密码</label>
-					<div class="xiao-userPassword-input">
-						<input type="password" id="userPassword" name="userPassword" placeholder="请输入密码 长度:6-12个字符" />
+					<label for="password">密码</label>
+					<div class="xiao-password-input">
+						<input type="password" id="password" name="password" placeholder="请输入密码 长度:6-12个字符" />
 					</div>
 				</div>
  
 				<div class="xiao-userRePassword-box">
 				<span class="xiao-require">*</span>
-						<label for="userRePassword">确认密码</label>
+						<label for="password">确认密码</label>
 					<div class="xiao-userRePassword-input">
-						<input type="password" id="userRePassword" name="userRePassword" placeholder="请重复输入密码" />
+						<input type="password" id="password" name="password" placeholder="请重复输入密码" />
 					</div>
 				</div>
-				<div class="xiao-userEmail-box">
+				<div class="xiao-email-box">
 					<span class="xiao-require">*</span>
-					<label for="userEmail">电子邮箱</label>
-					<div class="xiao-userEmail-input">
-						<input type="text" id="userEmail" name="userEmail" placeholder="请输入您的邮箱地址，如：123@qq.com" />
+					<label for="email">电子邮箱</label>
+					<div class="xiao-email-input">
+						<input type="text" id="email" name="email" placeholder="请输入您的邮箱地址，如：123@qq.com" />
 					</div>
 				</div>
 				
