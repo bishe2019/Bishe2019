@@ -65,7 +65,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		width: 300px;
 		height: 50px;
 		margin-left: 180px;
-		margin-top: 5px;
+		margin-top: 155px;
 		text-align: center;
 		font-size: 28px;
 		font-weight: 800;
@@ -205,34 +205,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="xiao-container">
 		<div class="xiao-register-box">
 			<div class="xiao-title-box">
-				<span>用户登录</span>
+				<span>用户名或密码错误，请重新登录</span>
 			</div>
-			<form action="/Bishe_2019/userLogin" method="get">
-				<div class="xiao-email-box">
-					<span class="xiao-require">*</span>
-					<label for="email">电子邮箱</label>
-					<div class="xiao-email-input">
-						<input type="text" id="email" name="email" placeholder="请输入您的邮箱地址，如：123@qq.com" />
-					</div>
-				</div>
- 
-				<div class="xiao-password-box">
-					<span class="xiao-require">*</span>
-					<label for="password">密码</label>
-					<div class="xiao-password-input">
-						<input type="password" id="password" name="password" placeholder="请输入密码 长度:6-12个字符" />
-					</div>
-				</div>
- 
-				
-				<div class="xiao-submit-box">
-					<input id = "xiao-submit-button" type="submit" value="登录">
-				</div>
-				
-				<div class="xiao-goLogin-box">
-					<a href="#" style="text-decoration: none;">忘记密码</a>
-				</div>
-			</form>
+			<div class="xiao-title-box">
+				<a href="login.jsp"><span>用户名或密码错误，请重新登录</span></a>
+			</div>
 		</div>
 	</div>
 
