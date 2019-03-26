@@ -1,5 +1,7 @@
 package com.dao;
 
+import javax.servlet.http.HttpSession;
+
 import com.entity.Administrator;
 import com.entity.User;
 import com.util.JDBCUtil;
@@ -31,5 +33,14 @@ public class AdministratorDao {
 		Object[] params = new Object[] { administratorName, password, email };
 		// 执行sql
 		JDBCUtil.ExcuteNoQuery(insertUser, params);
+	}
+	
+	/**
+	 * 管理员登录
+	 * @param administrator
+	 * @param session
+	 */
+	public void administratorLogin(Administrator administrator,HttpSession session) {
+		String login = "select * from administrator where administrator_email = ? and administrator_password = ?";
 	}
 }
