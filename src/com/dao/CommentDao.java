@@ -16,12 +16,13 @@ public class CommentDao {
 	 * @param comment
 	 */
 	public void insertComment(Comment comment) {
-		String insertCopmment = "insert into comment (comment_text,user_id,scene_id,comment_time) values (?,?,?,?)";
+		String insertCopmment = "insert into comment (comment_text,user_id,scene_id,comment_time,user_name) values (?,?,?,?,?)";
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String commentText = comment.getCommentText();
 		Integer userId = comment.getUserId();
 		Integer sceneId = comment.getSceneId();
-		Object[] params = new Object[] {commentText,userId,sceneId,df.format(new Date())};
+		String userName = comment.getUserName();
+		Object[] params = new Object[] {commentText,userId,sceneId,df.format(new Date()),userName};
 		
 		JDBCUtil.ExcuteNoQuery(insertCopmment, params);
 	}
@@ -48,6 +49,9 @@ public class CommentDao {
 			}
 			if (obj.get("comment_time") != null) {
 				comment.setCommentTime(String.valueOf(obj.get("comment_time")));
+			}
+			if (obj.get("user_name") != null) {
+				comment.setUserName(String.valueOf(obj.get("user_name")));
 			}
 			commentList.add(comment);
 		});

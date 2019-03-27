@@ -7,12 +7,15 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.entity.Comment;
 import com.entity.Params;
 import com.entity.Scene;
+import com.service.CommentService;
 import com.service.SceneService;
 
 public class SceneController {
 	SceneService sceneService = new SceneService();
+	CommentService commentService = new CommentService();
 	
 	/**
 	 * ≤Â»Îæ∞µ„
@@ -45,7 +48,9 @@ public class SceneController {
 	@GetMapping("/getScene")
 	public String getScene(Integer sceneId,HttpServletRequest request) {
 		Scene scene = sceneService.getScene(sceneId);
+		List<Comment> commentList = commentService.getCommentList(sceneId);
 		request.setAttribute("scene", scene);
+		request.setAttribute("commentList", commentList);
 		
 		return "";
 	}

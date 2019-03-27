@@ -29,6 +29,16 @@ public class Comment implements Serializable {
 	@Column(name="user_id")
 	private int userId;
 
+	private String userName;
+	
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
 	public Comment() {
 	}
 
