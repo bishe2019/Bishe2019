@@ -45,8 +45,7 @@ public class UserController {
 	public String userLogin(HttpSession session,User user,HttpServletRequest request) {
 		boolean isHave = userService.userLogin(user, session);
 		if (isHave) {
-			Params params = new Params();
-			List<Scene> sceneList = sceneService.getSceneList(params);
+			List<Scene> sceneList = sceneService.getSceneList("");
 			request.setAttribute("SceneList", sceneList);
 			return "index";
 		}else {
