@@ -118,51 +118,11 @@ String basePath = request.getScheme() + "://"
 				<div class="agileinfo-top-grids">
 				<c:forEach items="${sceneList}" var="p" begin="0" end="8" step="1">
 					<div class="col-sm-4 wthree-top-grid">
-						<img src="<%=basePath%>images/${p.scenePic}" alt="" />
+						<img src="<%=basePath%>images/${p.scenePic}" alt="" width="350px" height="210px" />
 						<h4>${p.sceneName}</h4>
-						<p>${p.sceneSumamry}</p>
+						<p style="width:350px; height:100px;-webkit-line-clamp:3;; text-overflow:ellipsis; overflow:hidden;">${p.sceneSumamry}</p>
 					</div>
 				</c:forEach>
-					<div class="col-sm-4 wthree-top-grid">
-						<img src="images/a2.jpg" alt="" />
-						<h4>Curabitur non blandit justo</h4>
-						<p>Pellentesque auctor euismod lectus a pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.</p>
-					</div>
-					<div class="col-sm-4 wthree-top-grid">
-						<img src="images/a3.jpg" alt="" />
-						<h4>Curabitur non blandit justo</h4>
-						<p>Pellentesque auctor euismod lectus a pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.</p>
-					</div>
-					<div class="col-sm-4 wthree-top-grid">
-						<img src="images/a3.jpg" alt="" />
-						<h4>Curabitur non blandit justo</h4>
-						<p>Pellentesque auctor euismod lectus a pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.</p>
-					</div>
-					<div class="col-sm-4 wthree-top-grid">
-						<img src="images/a3.jpg" alt="" />
-						<h4>Curabitur non blandit justo</h4>
-						<p>Pellentesque auctor euismod lectus a pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.</p>
-					</div>
-					<div class="col-sm-4 wthree-top-grid">
-						<img src="images/a3.jpg" alt="" />
-						<h4>Curabitur non blandit justo</h4>
-						<p>Pellentesque auctor euismod lectus a pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.</p>
-					</div>
-					<div class="col-sm-4 wthree-top-grid">
-						<img src="images/a1.jpg" alt="" />
-						<h4>Curabitur non blandit justo</h4>
-						<p>Pellentesque auctor euismod lectus a pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.</p>
-					</div>
-					<div class="col-sm-4 wthree-top-grid">
-						<img src="images/a2.jpg" alt="" />
-						<h4>Curabitur non blandit justo</h4>
-						<p>Pellentesque auctor euismod lectus a pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.</p>
-					</div>
-					<div class="col-sm-4 wthree-top-grid">
-						<img src="images/a3.jpg" alt="" />
-						<h4>Curabitur non blandit justo</h4>
-						<p>Pellentesque auctor euismod lectus a pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.</p>
-					</div>
 					<div class="clearfix"> </div>
 				</div>
 			</div>
