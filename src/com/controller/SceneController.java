@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.entity.Comment;
 import com.entity.Params;
@@ -34,8 +35,8 @@ public class SceneController {
 	 * @return
 	 */
 	@GetMapping("/getSceneList")
-	public String getSceneList(String SceneName,HttpServletRequest request) {
-		List<Scene> sceneList = sceneService.getSceneList(SceneName);
+	public String getSceneList(@RequestParam("sceneName") String sceneName,HttpServletRequest request) {
+		List<Scene> sceneList = sceneService.getSceneList(sceneName);
 		request.setAttribute("sceneList", sceneList);
 		return "";
 	}
