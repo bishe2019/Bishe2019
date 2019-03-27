@@ -38,7 +38,7 @@ public class SceneController {
 	public String getSceneList(HttpServletRequest request) {
 		List<Scene> sceneList = sceneService.getSceneList("");
 		request.setAttribute("sceneList", sceneList);
-		return "";
+		return "hot";
 	}
 	
 	/**

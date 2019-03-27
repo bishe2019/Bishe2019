@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -33,6 +34,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	});
 </script> 
+<%
+
+String path = request.getContextPath();
+String basePath = request.getScheme() + "://"
++ request.getServerName() + ":" + request.getServerPort()
++ path + "/";
+%>
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
@@ -108,11 +116,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h3>最近热门</h3>
 				</div>
 				<div class="agileinfo-top-grids">
+				<c:forEach items="${sceneList}" var="p" begin="0" end="8" step="1">
 					<div class="col-sm-4 wthree-top-grid">
-						<img src="images/a1.jpg" alt="" />
-						<h4>Curabitur non blandit justo</h4>
-						<p>Pellentesque auctor euismod lectus a pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.nascetur ridiculus mus. Curabitur ut elit at est tempus volutpat.</p>
+						<img src="<%=basePath%>images/${p.scenePic}" alt="" />
+						<h4>${p.sceneName}</h4>
+						<p>${p.sceneSumamry}</p>
 					</div>
+				</c:forEach>
 					<div class="col-sm-4 wthree-top-grid">
 						<img src="images/a2.jpg" alt="" />
 						<h4>Curabitur non blandit justo</h4>

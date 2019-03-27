@@ -561,12 +561,10 @@ i.fa.fa-anchor, i.fa.fa-comment, i.fa.fa-heartbeat,i.fa.fa-magnet,i.fa.fa-thumbs
     font-size: 2em;
 }
 .services-icon{
-    width: 70px;
-    height: 70px;
     text-align: center;
     border: solid 2px #f1f1f1;
     padding: 1.2em 0 0 0;
-    margin: 0 auto;
+    margin: 2em auto;
 }
 /* Radial In */
 .hvr-radial-in {
@@ -580,7 +578,6 @@ i.fa.fa-anchor, i.fa.fa-comment, i.fa.fa-heartbeat,i.fa.fa-magnet,i.fa.fa-thumbs
     -moz-osx-font-smoothing: grayscale;
     position: relative;
     overflow: hidden;
-    background: #82b62d;
     -webkit-transition-property: color;
     transition-property: color;
     -webkit-transition-duration: 0.3s;
@@ -594,7 +591,7 @@ i.fa.fa-anchor, i.fa.fa-comment, i.fa.fa-heartbeat,i.fa.fa-magnet,i.fa.fa-thumbs
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ffffff;
+
     border-radius: 100%;
     -webkit-transform: scale(2);
     transform: scale(2);
@@ -627,7 +624,7 @@ i.fa.fa-anchor, i.fa.fa-comment, i.fa.fa-heartbeat,i.fa.fa-magnet,i.fa.fa-thumbs
     margin: 1em 0 0 0;
 }
 .services-right-grids:nth-child(2){
-	margin: 3em 0 0 0;
+	margin: 5em 5em 5em 5em;
 }
 .services-icon-info p{
 	color: #999999;

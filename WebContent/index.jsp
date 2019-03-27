@@ -82,7 +82,7 @@ String basePath = request.getScheme() + "://"
 									<ul class="nav navbar-nav">
 									<li><a class="active" href="index.jsp">主页</a></li>
 										<li><a href="list.jsp">列表</a></li>
-										<li><a href="hot.jsp">热门排行</a></li>					
+										<li><a href="getSceneList" >热门排行</a></li>					
 										<li><a href="typography.jsp">论坛</a></li>
 										<li><a href="contact.jsp">联系</a></li>
 									</ul>	
@@ -202,63 +202,17 @@ String basePath = request.getScheme() + "://"
 			</div>
 			<div class="agileits-services">
 				<div class="services-right-grids">
+				<c:forEach items="${SceneList}" var="p" begin="2" end="7" step="1">
 					<div class="col-sm-4 services-right-grid">
 						<div class="services-icon hvr-radial-in">
-							<i class="fa fa-anchor" aria-hidden="true"></i>
+							<img src="<%=basePath%>images/${p.scenePic}" width="400" height="300"  />
 						</div>
 						<div class="services-icon-info">
-							<h5>北京 天安门</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed tincidunt et, pellentesque eget mi.</p>
+							<h5>${p.sceneName}</h5>
+							<p style="width:350px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;">${p.sceneSumamry}</p>
 						</div>
 					</div>
-					<div class="col-sm-4 services-right-grid">
-						<div class="services-icon hvr-radial-in">
-							<i class="fa fa-comment" aria-hidden="true"></i>
-						</div>
-						<div class="services-icon-info">
-							<h5>长城 八达岭</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed tincidunt et, pellentesque eget mi.</p>
-						</div>
-					</div>
-					<div class="col-sm-4 services-right-grid">
-						<div class="services-icon hvr-radial-in">
-							<i class="fa fa-heartbeat" aria-hidden="true"></i>
-						</div>
-						<div class="services-icon-info">
-							<h5>西安 兵马俑</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed tincidunt et, pellentesque eget mi.</p>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="services-right-grids">
-					<div class="col-sm-4 services-right-grid">
-						<div class="services-icon hvr-radial-in">
-							<i class="fa fa-magnet" aria-hidden="true"></i>
-						</div>
-						<div class="services-icon-info">
-							<h5>     山海关</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed tincidunt et, pellentesque eget mi.</p>
-						</div>
-					</div>
-					<div class="col-sm-4 services-right-grid">
-						<div class="services-icon hvr-radial-in">
-							<i class="fa fa-heartbeat" aria-hidden="true"></i>
-						</div>
-						<div class="services-icon-info">
-							<h5>古庙 大理寺</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed tincidunt et, pellentesque eget mi.</p>
-						</div>
-					</div>
-					<div class="col-sm-4 services-right-grid">
-						<div class="services-icon hvr-radial-in">
-							<i class="fa fa-thumbs-up" aria-hidden="true"></i>
-						</div>
-						<div class="services-icon-info">
-							<h5>山西 五台山</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed tincidunt et, pellentesque eget mi.</p>
-						</div>
-					</div>
+				</c:forEach>
 					<div class="clearfix"> </div>
 				</div>
 			</div>
