@@ -29,8 +29,7 @@ public class UserController {
 	@GetMapping("/userRegister")
 	public String userRegister(HttpSession session,User user,HttpServletRequest request) {
 		userService.userRegister(user, session);
-		Params params = new Params();
-		List<Scene> sceneList = sceneService.getSceneList(params);
+		List<Scene> sceneList = sceneService.getSceneList("");
 		request.setAttribute("SceneList", sceneList);
 		return "index";
 	}
