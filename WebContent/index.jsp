@@ -82,7 +82,7 @@ String basePath = request.getScheme() + "://"
 									<ul class="nav navbar-nav">
 									<li><a class="active" href="index.jsp">主页</a></li>
 										<li><a href="list.jsp">列表</a></li>
-										<li><a href="getSceneList" >热门排行</a></li>					
+										<li><a href="./getSceneList" >热门排行</a></li>					
 										<li><a href="typography.jsp">论坛</a></li>
 										<li><a href="contact.jsp">联系</a></li>
 									</ul>	

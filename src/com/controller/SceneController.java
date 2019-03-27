@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpRequest;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -14,6 +15,7 @@ import com.entity.Scene;
 import com.service.CommentService;
 import com.service.SceneService;
 
+@Controller
 public class SceneController {
 	SceneService sceneService = new SceneService();
 	CommentService commentService = new CommentService();
