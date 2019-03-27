@@ -24,8 +24,8 @@ public class SceneService {
 	 * @param params
 	 * @return
 	 */
-	public List<Scene> getSceneList(Params params){
-		return sceneDao.getSceneList(params);
+	public List<Scene> getSceneList(String sceneName){
+		return sceneDao.getSceneList(sceneName);
 	}
 	
 	/**
@@ -43,5 +43,23 @@ public class SceneService {
 	 */
 	public void deleteScene(Integer sceneId) {
 		sceneDao.deleteScene(sceneId);
+	}
+	
+	/**
+	 *获取某一类型的景点
+	 * @param typeId
+	 * @return
+	 */
+	public List<Scene> getScnenByTypeId(Integer typeId){
+		return sceneDao.getScnenByTypeId(typeId);
+	}
+	
+	/**
+	 * 为景点选取类型
+	 * @param sceneId
+	 * @param typeId
+	 */
+	public void selectType(Integer sceneId,Integer typeId) {
+		sceneDao.selectType(sceneId, typeId);
 	}
 }

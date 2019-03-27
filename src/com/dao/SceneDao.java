@@ -31,16 +31,16 @@ public class SceneDao {
 	 * 获取景点列表
 	 * @return
 	 */
-	public List<Scene> getSceneList(Params params){
+	public List<Scene> getSceneList(String sceneName){
 		StringBuilder getSceneList = new StringBuilder("select * from scene");
 		//景点名
-		if (params.getSceneName() != null) {
-			getSceneList.append(" where scene_name like '%"+params.getSceneName()+"%'");
+		if (sceneName != "") {
+			getSceneList.append(" where scene_name like '%"+sceneName+"%'");
 		}
 		//景点类型
-		if (params.getSceneType() != null) {
-			getSceneList.append(" where scene_type = "+params.getSceneType()+"");
-		}
+//		if (params.getSceneType() != null) {
+//			getSceneList.append(" where scene_type = "+params.getSceneType()+"");
+//		}
 		List<Scene> sceneList = new ArrayList<>();
 		List<Map<String,Object>> objList = JDBCUtil.executeQuery(getSceneList.toString());
 		for(int j = 0;j < objList.size();j++){
