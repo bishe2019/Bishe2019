@@ -35,8 +35,8 @@ public class SceneController {
 	 * @return
 	 */
 	@GetMapping("/getSceneList")
-	public String getSceneList(@RequestParam("sceneName") String sceneName,HttpServletRequest request) {
-		List<Scene> sceneList = sceneService.getSceneList(sceneName);
+	public String getSceneList(HttpServletRequest request) {
+		List<Scene> sceneList = sceneService.getSceneList("");
 		request.setAttribute("sceneList", sceneList);
 		return "";
 	}
