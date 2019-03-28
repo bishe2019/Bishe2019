@@ -34,6 +34,116 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	});
 </script> 
+<style>
+ ul {
+            margin-top:50px;
+            padding: 0;
+            list-style: none;
+        }
+
+        input {
+            margin: 0;
+        }
+
+        /*初始化样式*/
+        .star_evaluate {
+            position: relative;
+            width: 100px;
+            height: 20px;
+            background: url(images/icon-star-default.png) repeat-x;
+            background-size: 20px 20px;
+            overflow: hidden;
+        }
+
+        .star,.score{
+            display: block;
+            height: 20px;
+            width: 20px;
+            position: absolute;
+        }
+        .star{
+            z-index: 2;
+        }
+        .score{
+            opacity: 0;
+        }
+
+        .star_1, .score_1 {
+            left: 0;
+        }
+
+        .star_2, .score_2 {
+            left: 20px;
+        }
+
+        .star_3, .score_3 {
+            left: 40px;
+        }
+
+        .star_4, .score_4 {
+            left: 60px;
+        }
+
+        .star_5, .score_5 {
+            left: 80px;
+        }
+
+        /*鼠标悬浮*/
+        .star:hover {
+            cursor: pointer;
+            background: url(images/icon-star-active.png) repeat-x;
+            background-size: 20px 20px;
+            left: 0;
+            z-index: 1;
+        }
+
+        .star_1:hover {
+            width: 20px;
+        }
+
+        .star_2:hover {
+            width: 40px;
+        }
+
+        .star_3:hover {
+            width: 60px;
+        }
+
+        .star_4:hover {
+            width: 80px;
+        }
+
+        .star_5:hover {
+            width: 100px;
+        }
+
+        /*选中之后*/
+        .score:checked + .star {
+            background: url("icon-star-active.png") repeat-x;
+            background-size: 20px 20px;
+            left: 0;
+        }
+
+        .score_1:checked + .star_1 {
+            width: 20px;
+        }
+
+        .score_2:checked + .star_2 {
+            width: 40px;
+        }
+
+        .score_3:checked + .star_3 {
+            width: 60px;
+        }
+
+        .score_4:checked + .star_4 {
+            width: 80px;
+        }
+
+        .score_5:checked + .star_5 {
+            width: 100px;
+        }
+</style>
 <%
 
 String path = request.getContextPath();
@@ -125,6 +235,23 @@ String basePath = request.getScheme() + "://"
 				<p>${scene.sceneSumamry}</p>
 			</div>	
 			<!-- comments -->
+	<form id="score_form"  action="getRate" method="get">用户打分
+    <div class="star_evaluate" style="margin-top:50px;margin-left:30px;">
+        <a href="getRate?rate=1&sceneId=${param.sceneId }"><input type="radio" id="scoreId_1" class="score score_1" name="rate" value="1"/>
+        <label for="scoreId_1" class="star star_1"></label></a>
+         <a href="getRate?rate=2&sceneId=${param.sceneId }"><input type="radio" id="scoreId_2" class="score score_2" name="rate" value="2"/>
+        <label for="scoreId_2" class="star star_2"></label></a>
+         <a href="getRate?rate=3&sceneId=${param.sceneId }"><input type="radio" id="scoreId_3" class="score score_3" name="rate" value="3"/>
+        <label for="scoreId_3" class="star star_3"></label></a>
+         <a href="getRate?rate=4&sceneId=${param.sceneId }"><input type="radio" id="scoreId_4" class="score score_4" name="rate" value="4"/>
+        <label for="scoreId_4" class="star star_4"></label></a>
+        <a href="getRate?rate=5&sceneId=${param.sceneId }"> <input type="radio" id="scoreId_5" class="score score_5" name="rate" value="5"/>
+        <label for="scoreId_5" class="star star_5"></label></a>
+         <input type="hidden" name="sceneId"  value=${param.sceneId } />
+         
+    </div>
+    <input type="submit" value="打分" style="margin-left:150px">
+	</form>
 			<div class="agileits_three_comments">
 				<h3>评论</h3>
 				<c:forEach items="${commentList}" var="p" begin="0" end="1" step="1">
@@ -143,6 +270,17 @@ String basePath = request.getScheme() + "://"
 					<div class="clearfix"> </div>
 				</div>
 				</c:forEach>
+			</div>
+			<div>
+				<form action="leaveComment" method="get">  
+  					评论：<br/> <!--clos指每行可以显示60个字符 rows指行数-->  
+  						<textarea name="commentText"width="800px"cols="160" rows="5">  </textarea><!--textarea指可以创建多行文本-->  
+  						<br/><br/><!-- input指表单控件，type指向的是控件类型，例如下行中submit（中文意思为顺从）指提交按钮控件 value（中文意思为价值价格重要性）指控件上显示的名字-->  
+  							<input type="hidden" name="sceneId" value=${param.sceneId } />
+  							<input type="hidden" name="userId" value=${user.userId } />
+  							<input type="hidden" name="userName" value=${user.userName } />
+  							<input type="submit" value="提交"/  >  
+  				</form>  
 			</div>
 			<!-- //comments -->
 			<!-- leave-comments -->

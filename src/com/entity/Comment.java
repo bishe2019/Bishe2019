@@ -28,7 +28,7 @@ public class Comment implements Serializable {
 
 	@Column(name="user_id")
 	private int userId;
-
+	@Column(name="user_name")
 	private String userName;
 	
 	public String getUserName() {

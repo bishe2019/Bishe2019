@@ -3,6 +3,7 @@ package com.controller;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.entity.User;
 import com.service.RateService;
@@ -19,10 +20,11 @@ public class RateController {
 	 * @param rate
 	 * @return
 	 */
+	@GetMapping("/getRate")
 	public String saveRate(HttpSession session,Integer sceneId,Integer rate) {
 		User user = (User) session.getAttribute("user");
 		rateService.saveRate(user.getUserId(), sceneId, rate);
 		
-		return "";
+		return "index";
 	}
 }
