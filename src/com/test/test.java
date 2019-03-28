@@ -3,6 +3,7 @@ package com.test;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.mahout.cf.taste.model.JDBCDataModel;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,7 @@ import com.dao.CommentDao;
 import com.dao.UserDao;
 import com.entity.Comment;
 import com.entity.User;
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import com.util.JDBCUtil;
 import com.util.StringUtils;
 
@@ -31,12 +33,18 @@ public class test {
 //		
 //		CommentDao dao = new CommentDao();
 //		dao.insertComment(comment);
-		try {
-			System.out.println(StringUtils.decrypt("Q0vYdtyWQ34="));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			System.out.println(StringUtils.decrypt("Q0vYdtyWQ34="));
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		MysqlDataSource dataSource = new MysqlDataSource();
+        dataSource.setServerName("localhost_3306");
+        dataSource.setUser("root");
+        dataSource.setPassword("");
+        dataSource.setDatabaseName("bishe_db");
+//		JDBCDataModel dataModel = new MySQLJDBCDataModel(dataSource, "taste_preferences", "user_id", "item_id", "preference","time");
 	}
 
 }

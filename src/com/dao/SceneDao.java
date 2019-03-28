@@ -153,4 +153,6 @@ public class SceneDao {
 		Object[] params = new Object[] {sceneId,typeId};
 		JDBCUtil.ExcuteNoQuery(selectType, params);
 	}
+	
+	
 }
