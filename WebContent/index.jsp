@@ -78,8 +78,13 @@ String basePath = request.getScheme() + "://"
 										</button>
 									</div>
 								<!-- Collect the nav links, forms, and other content for toggling -->
-								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								
+								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">		
 									<ul class="nav navbar-nav">
+									<li><form action="getSceneList" method="get">
+					<input type="text"  name="sceneName" >
+					<input type="submit" value="搜索">
+				</form></li>
 									<li><a class="active" href="index.jsp">主页</a></li>
 										<li><a href="list.jsp">列表</a></li>
 										<li><a href="getSceneList?sceneName=" >热门排行</a></li>					
@@ -119,6 +124,7 @@ String basePath = request.getScheme() + "://"
 		<div class="w3layouts-banner-slider">
 			<div class="container">
 				<div class="slider">
+				
 					<div class="callbacks_container">
 						<ul class="rslides callbacks callbacks1" id="slider4">
 							<li>
