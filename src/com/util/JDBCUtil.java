@@ -93,7 +93,6 @@ public class JDBCUtil {
 			List<Map<String ,Object>> list=new ArrayList<>();
 			//获取结果集的列数
 			int count = rs.getMetaData().getColumnCount();
-			int rows = rs.getRow();
 			//对结果集遍历每一条数据是一个Map集合，列是k,值是v
 			while(rs.next()){
 				//一个空的map集合，用来存放每一行数据
