@@ -12,7 +12,7 @@ import java.util.Map;
 import com.mysql.jdbc.PreparedStatement;
 
 public class JDBCUtil {
-	private static String url = "jdbc:mysql://localhost:3306/bishe_db";
+	private static String url = "jdbc:mysql://localhost:3306/bishe_db?useUnicode=true&characterEncoding=UTF-8";
 	private static String username = "root";
 	private static String password = "";
 

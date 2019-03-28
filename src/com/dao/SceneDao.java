@@ -32,20 +32,24 @@ public class SceneDao {
 	 * @return
 	 */
 	public List<Scene> getSceneList(String sceneName){
-		StringBuilder getSceneList = new StringBuilder("select * from scene");
+		StringBuilder getSceneList = new StringBuilder("select * from scene  where scene_name like ?");
+//		StringBuilder getSceneList = new StringBuilder("select * from scene");
 		//景点名
-		if (sceneName != "") {
-			getSceneList.append(" where scene_name like '%"+sceneName+"%'");
-		}
+//		if (sceneName != "") {
+//			getSceneList.append(" where scene_name like '%"+sceneName+"%'");
+//		}
 		//景点类型
 //		if (params.getSceneType() != null) {
 //			getSceneList.append(" where scene_type = "+params.getSceneType()+"");
 //		}
 		List<Scene> sceneList = new ArrayList<>();
-		List<Map<String,Object>> objList = JDBCUtil.executeQuery(getSceneList.toString());
+		List<Map<String,Object>> objList = JDBCUtil.executeQuery(getSceneList.toString(),"%"+sceneName+"%");
 		for(int j = 0;j < objList.size();j++){
 			Map<String,Object> obj = objList.get(j);
 			Scene scene = new Scene();
+			if (obj.get("scene_id") != null) {
+				scene.setSceneId((int) obj.get("scene_id"));
+			}
 			if (obj.get("scene_name") != null) {
 				scene.setSceneName(String.valueOf(obj.get("scene_name")));
 			}
