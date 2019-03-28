@@ -55,4 +55,15 @@ public class TypeDao {
 		return typeList;
 		
 	}
+	
+	/**
+	 * 用户关注类型
+	 * @param userId
+	 * @param typeId
+	 */
+	public void userSubType(Integer userId,Integer typeId) {
+		String userSubType = "insert into favor (user_id,type_id) values (?,?)";
+		Object[] params = new Object[] {userId,typeId};
+		JDBCUtil.ExcuteNoQuery(userSubType, params);
+	}
 }

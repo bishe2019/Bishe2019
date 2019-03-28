@@ -34,4 +34,13 @@ public class TypeService {
 	public List<Type> getTypeList(Params params){
 		return typeDao.getTypeList(params);
 	}
+	
+	/**
+	 * 用户关注类型
+	 * @param userId
+	 * @param typeId
+	 */
+	public void userSubType(Integer userId,Integer typeId) {
+		typeDao.userSubType(userId, typeId);
+	}
 }
