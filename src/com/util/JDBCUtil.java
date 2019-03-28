@@ -1,11 +1,13 @@
 package com.util;
 
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -117,5 +119,24 @@ public class JDBCUtil {
 		
 		return null;
 	}
+	 /**
+     * 是否存在这个数据表
+     * @param tablename
+     * @return
+     * @throws SQLException
+     */
+    public static Boolean doesTableExist(String tablename) throws SQLException {
+        HashSet<String> set = new HashSet<String>();
+        Connection con = getConn();
+        DatabaseMetaData meta = con.getMetaData();
+        ResultSet res = meta.getTables(null, null, null,
+                new String[]{"TABLE"});
+        while (res.next()) {
+            set.add(res.getString("TABLE_NAME"));
+        }
+        close(con);
+        res.close();
+        return set.contains(tablename);
+    }
 
 }

@@ -17,9 +17,9 @@ public class CommentController {
 	 * @return
 	 */
 	@GetMapping("/leaveComment")
-	public String leaveComment(Comment comment,Integer sceneId) {
+	public String leaveComment(Comment comment) {
 		commentService.insertComment(comment);
-		return "redirect:/getScene?sceneId="+sceneId;
+		return "redirect:/getScene?sceneId="+comment.getSceneId();
 	}
 	
 }
