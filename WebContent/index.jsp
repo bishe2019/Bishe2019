@@ -192,7 +192,7 @@ String basePath = request.getScheme() + "://"
 					</div>
 				</div>
 				<div class="col-md-5 w3ls-welcome-img1">
-					<img src="<%=basePath%>images/${p.scenePic}"   width="400" height="300" />
+					<a href="getScene?sceneId=${p.sceneId}"><img src="<%=basePath%>images/${p.scenePic}"   width="400" height="300" /></a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>

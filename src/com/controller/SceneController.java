@@ -55,7 +55,7 @@ public class SceneController {
 		request.setAttribute("scene", scene);
 		request.setAttribute("commentList", commentList);
 		
-		return "";
+		return "scene";
 	}
 	
 	/**

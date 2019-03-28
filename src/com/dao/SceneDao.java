@@ -92,13 +92,13 @@ public class SceneDao {
 			scene.setSceneName(String.valueOf(sceneMap.get("scene_name")));
 		}
 		if (sceneMap.get("scene_pic") != null) {
-			scene.setSceneName(String.valueOf(sceneMap.get("scene_pic")));
+			scene.setScenePic(String.valueOf(sceneMap.get("scene_pic")));
 		}
-		if (sceneMap.get("scene_sumamry") != null) {
-			scene.setSceneName(String.valueOf(sceneMap.get("sceneSumamry")));
+		if (sceneMap.get("scene_summary") != null) {
+			scene.setSceneSumamry(String.valueOf(sceneMap.get("scene_summary")));
 		}
 		if (sceneMap.get("scene_type") != null) {
-			scene.setSceneName(String.valueOf(sceneMap.get("sceneType")));
+			scene.setSceneType((int) sceneMap.get("scene_type"));
 		}
 		
 		return scene;

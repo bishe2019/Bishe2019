@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -33,6 +34,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	});
 </script> 
+<%
+
+String path = request.getContextPath();
+String basePath = request.getScheme() + "://"
++ request.getServerName() + ":" + request.getServerPort()
++ path + "/";
+%>
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
@@ -96,18 +104,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		<div class="w3ls-heading">
-			<h2>Single Page</h2>	
+			<h2>景点详情</h2>	
 		</div>
 	</div>
 	<!-- //banner -->
 	<!-- single -->
 	<div class="single">
-		<div class="container">
+		<div class="container">	
 			<div class="agileits-single-img">
-				<img src="images/s1.jpg" alt="" />
-				
-				<h4>Suspendisse ornare vitae ex nec aliquam. Nunc et massa ut purus porta euismod quis eu erat. Nam ornare faucibus elit sed tempor. Quisque iaculis odio nibh, et auctor tellus rhoncus vel.</h4>
-				<div class="agileinfo-single-icons">
+				<img src="<%=basePath%>images/${scene.scenePic}" alt="" />
+				<h4>${scene.sceneName}</h4>
+				<div class="agileinfo-single-icons" >
 					<ul>
 						<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span>Admin</span></a></li>
 						<li><i class="fa fa-calendar" aria-hidden="true"></i><span>04.Nov.2015</span></li>
@@ -115,69 +122,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>300 Likes</span></a></li>
 					</ul>				
 				</div>
-				<p>Vestibulum commodo posuere ipsum in elementum. Proin id nibh dictum, ornare purus quis, ullamcorper lectus. Nullam bibendum, dui eu ornare hendrerit, turpis odio tempor nulla, id tempus neque erat finibus risus. Nullam accumsan ipsum at nunc molestie, at pretium ipsum dignissim. Nullam lorem ligula, gravida sit amet tincidunt id, porta non turpis. Vestibulum tincidunt at lectus et egestas. Sed facilisis tempor tellus eget feugiat. Praesent ut est vel metus consequat consequat. Etiam interdum egestas posuere. Quisque at mi eget lorem malesuada ornare non non quam.</p>
-			</div>
-			
+				<p>${scene.sceneSumamry}</p>
+			</div>	
 			<!-- comments -->
 			<div class="agileits_three_comments">
-				<h3>Comments</h3>
+				<h3>评论</h3>
+				<c:forEach items="${commentList}" var="p" begin="0" end="1" step="1">
 				<div class="agileits_three_comment_grid">
 					<div class="agileits_tom">
 						<img src="images/t2.jpg" alt=" " class="img-responsive">
 					</div>
 					<div class="agileits_tom_right">
 						<div class="hardy">
-							<h4>David Son</h4>
-							<p>21 June 2016</p>
-						</div>
-						<div class="reply">
-							<a href="#">Reply</a>
+							<h4>${p.userName}</h4>
+							<p>${p.commentTime}</p>
 						</div>
 						<div class="clearfix"> </div>
-						<p class="lorem">There are many variations of passages of Lorem Ipsum available,
-						but the majority have suffered alteration in some form, by injected humour, 
-						or randomised words which don't.</p>
+						<p class="lorem">${p.commentText}</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
-				<div class="agileits_three_comment_grid">
-					<div class="agileits_tom">
-						<img src="images/t4.jpg" alt=" " class="img-responsive">
-					</div>
-					<div class="agileits_tom_right">
-						<div class="hardy">
-							<h4>Steve Smith</h4>
-							<p>21 June 2016</p>
-						</div>
-						<div class="reply">
-							<a href="#">Reply</a>
-						</div>
-						<div class="clearfix"> </div>
-						<p class="lorem">There are many variations of passages of lorem ipsum available,
-							but the majority have suffered alteration in some form, by injected humour, 
-							or randomised words which don't.</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="agileits_three_comment_grid">
-					<div class="agileits_tom">
-						<img src="images/t4.jpg" alt=" " class="img-responsive">
-					</div>
-					<div class="agileits_tom_right">
-						<div class="hardy">
-							<h4>Steve Smith</h4>
-							<p>21 June 2016</p>
-						</div>
-						<div class="reply">
-							<a href="#">Reply</a>
-						</div>
-						<div class="clearfix"> </div>
-						<p class="lorem">There are many variations of passages of lorem ipsum available,
-							but the majority have suffered alteration in some form, by injected humour, 
-							or randomised words which don't.</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
+				</c:forEach>
 			</div>
 			<!-- //comments -->
 			<!-- leave-comments -->
