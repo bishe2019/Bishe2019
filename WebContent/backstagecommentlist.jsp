@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>演员列表-后台管理系统</title>
+<title>评论列表-后台管理系统</title>
 <meta name="description" content="这是一个 index 页面">
 <meta name="keywords" content="index">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -125,13 +125,9 @@
 <div class="admin-biaogelist">
 	
     <div class="listbiaoti am-cf">
-      <ul class="am-icon-flag on"> 演员列表</ul>
+      <ul class="am-icon-flag on"> 评论列表</ul>
       
       <dl class="am-icon-home" style="float: right;"> 当前位置： 首页 > <a href="#">演员列表</a></dl>
-      
-      <dl>
-        <button type="button" class="am-btn am-btn-danger am-round am-btn-xs am-icon-plus"> <a href="addactor.jsp">新增演员</a></button>
-      </dl>
       
       
     </div>

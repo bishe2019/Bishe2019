@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>电影列表-后台管理系统</title>
+<title>景点列表-后台管理系统</title>
 <meta name="description" content="这是一个 index 页面">
 <meta name="keywords" content="index">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -128,12 +128,12 @@
 <div class="admin-biaogelist">
 	
     <div class="listbiaoti am-cf">
-      <ul class="am-icon-flag on"> 电影列表</ul>
+      <ul class="am-icon-flag on"> 景点列表</ul>
       
-      <dl class="am-icon-home" style="float: right;"> 当前位置： 首页 > <a href="#">电影列表</a></dl>
+      <dl class="am-icon-home" style="float: right;"> 当前位置： 首页 > <a href="#">景点列表</a></dl>
       
       <dl>
-        <button type="button" class="am-btn am-btn-danger am-round am-btn-xs am-icon-plus"> <a href="addmovie.jsp">新增电影</a></button>
+        <button type="button" class="am-btn am-btn-danger am-round am-btn-xs am-icon-plus"> <a href="addmovie.jsp">新增景点</a></button>
       </dl>
       
       
@@ -154,62 +154,32 @@
             <thead>
               <tr class="am-success">
                 <th class="table-id">ID</th>
-                <th class="table-author am-hide-sm-only">电影</th>
+                <th class="table-author am-hide-sm-only">名称</th>
                 <th class="table-author am-hide-sm-only">简介</th>
-                <th class="table-type">上映时间</th>
-                <th class="table-author am-hide-sm-only">时长</th>
+                <th class="table-type">图片地址</th>
+                <th class="table-author am-hide-sm-only">类型</th>
                 <th class="table-date am-hide-sm-only">评分</th>
                 <th width="163px" class="table-set">操作</th>
               </tr>
             </thead>
             <tbody>
-            <c:forEach items="${movies }" var="p">
+            <c:forEach items="${scenelist }" var="p">
               <tr>
-                <td>${p.movie_id}</td>
-                <td>${p.movie_name} <a href="re-moviename.jsp?id=${p.movie_id}"><span class="am-icon-pencil-square-o"></span></a></td>
-                <td>${p.movie_summary} <a href="re-introduction.jsp?id=${p.movie_id}"><span class="am-icon-pencil-square-o"></span></a></td>
-                <td>${p.date}</td>
-                <td >${p.movie_time} <a href="re-time.jsp?id=${p.movie_id}"><span class="am-icon-pencil-square-o"></span></a></td>
+                <td>${p.scene_id}</td>
+                <td>${p.scene_name} <a href="re-moviename.jsp?id=${p.scene_id}"><span class="am-icon-pencil-square-o"></span></a></td>
+                <td>${p.movie_summary} <a href="re-introduction.jsp?id=${p.scene_id}"><span class="am-icon-pencil-square-o"></span></a></td>
+                <td>${p.scenePic}</td>
+                <td >${p.scene_type} <a href="re-time.jsp?id=${p.scene_id}"><span class="am-icon-pencil-square-o"></span></a></td>
                 <td >${p.rate} </td>
                 <td><div class="am-btn-toolbar">
                     <div class="am-btn-group am-btn-group-xs">
-                      <a href="delete_movie?id=${p.movie_id}"><span class="am-icon-trash-o"></span></a>
+                      <a href="delete_movie?id=${p.scene_id}"><span class="am-icon-trash-o"></span></a>
                     </div>
                   </div></td>
               </tr>
               	</c:forEach>
             </tbody>
           </table>
-          <tr>
-            <td colspan="6" align="center" bgcolor="#5BA8DE">共${page.totalRecords}条记录 共${page.totalPages}页 当前第${page.pageNo}页<br>
-                
-                <a href="backstagemovielist?pageNo=${page.topPageNo }"><input type="button" name="fristPage" value="首页" /></a>
-                <c:choose>
-                  <c:when test="${page.pageNo!=1}">
-                    
-                      <a href="backstagemovielist?pageNo=${page.previousPageNo }"><input type="button" name="previousPage" value="上一页" /></a>
-                    
-                  </c:when>
-                  <c:otherwise>
-                    
-                      <input type="button" disabled="disabled" name="previousPage" value="上一页" />
-                    
-                  </c:otherwise>
-                </c:choose>
-                <c:choose>
-                  <c:when test="${page.pageNo != page.totalPages}">
-                    <a href="backstagemovielist?pageNo=${page.nextPageNo }"><input type="button" name="nextPage" value="下一页" /></a>
-                  </c:when>
-                  <c:otherwise>
-                    
-                      <input type="button" disabled="disabled" name="nextPage" value="下一页" />
-                    
-                  </c:otherwise>
-                </c:choose>
-                <a href="backstagemovielist?pageNo=${page.bottomPageNo }"><input type="button" name="lastPage" value="尾页" /></a>
-            </td>
-        </tr>
-             
           
           
           
