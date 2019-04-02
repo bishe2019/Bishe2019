@@ -211,7 +211,7 @@ String basePath = request.getScheme() + "://"
 				<c:forEach items="${SceneList}" var="p" begin="2" end="7" step="1">
 					<div class="col-sm-4 services-right-grid">
 						<div class="services-icon hvr-radial-in">
-							<img src="<%=basePath%>images/${p.scenePic}" width="400" height="300"  />
+							<a href="getScene?sceneId=${p.sceneId}"><img src="<%=basePath%>images/${p.scenePic}" width="400" height="300"  /></a>
 						</div>
 						<div class="services-icon-info">
 							<h5>${p.sceneName}</h5>

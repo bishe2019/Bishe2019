@@ -68,22 +68,23 @@
     
     <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎系统管理员：清风抚雪</div>
     <div class="sideMenu">
-    <h3 class="am-icon-flag"><em></em> <a href="./backstagemovielist">电影管理</a></h3>
+    
+      <h3 class="am-icon-flag"><em></em> <a href="./backstagemovielist">景点管理</a></h3>
       <ul>
-        <li><a href="./backstagemovielist">电影列表</a></li>
-        <li><a href="addmovie.jsp">添加电影</a></li>
+        <li><a href="./backstagemovielist">景点列表</a></li>
+        <li><a href="addmovie.jsp">添加景点</a></li>
       </ul>
       
-      <h3 class="am-icon-cart-plus"><em></em> <a href="./backstageactorlist">演员管理</a></h3>
+      <h3 class="am-icon-cart-plus"><em></em> <a href="./backstageactorlist">评论管理</a></h3>
       <ul>
-        <li><a href="./backstageactorlist">演员列表</a></li>
-        <li><a href="addactor.jsp">添加演员</a></li>
+        <li><a href="./backstageactorlist">评论列表</a></li>
       </ul>
       
       <h3 class="am-icon-users"><em></em> <a href="./backstageuserlist">用户管理</a></h3>
       <ul>
         <li><a href="./backstageuserlist">用户列表 </a></li>
       </ul>
+      
     </div>
     <!-- sideMenu End --> 
     
@@ -345,7 +346,7 @@
                 <th class="table-title">用户名称</th>
                 <th class="table-type">邮箱</th>
                 <th class="table-author am-hide-sm-only">手机</th>
-                <th class="table-author am-hide-sm-only">生日</th>
+                <th class="table-author am-hide-sm-only">年龄</th>
                 <th class="table-date am-hide-sm-only">签名</th>
                 <th width="130px" class="table-set">操作</th>
               </tr>
@@ -358,8 +359,8 @@
                 <td>${p.username}</td>
                 <td>${p.email}</td>
                 <td class="am-hide-sm-only">${p.phone}</td>
-                <td class="am-hide-sm-only">${p.birthday }</td>
-                <td class="am-hide-sm-only">${p.signature }</td>
+                <td class="am-hide-sm-only">${p.age }</td>
+                <td class="am-hide-sm-only">${p.avatar}</td>
                 <td> 	
                 	<div class="am-btn-toolbar">
                     <div class="am-btn-group am-btn-group-xs">
