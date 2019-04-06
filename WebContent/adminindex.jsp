@@ -66,7 +66,7 @@
     
       <h3 class="am-icon-flag"><em></em> <a href="./backstagemovielist">景点管理</a></h3>
       <ul>
-        <li><a href="./backstagemovielist">景点列表</a></li>
+        <li><a href="./backstageSceneList">景点列表</a></li>
         <li><a href="addmovie.jsp">添加景点</a></li>
       </ul>
       

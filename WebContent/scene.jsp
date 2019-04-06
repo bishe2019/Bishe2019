@@ -178,8 +178,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<img src="./images/icon-star-default.png" index="1" title="特别差，给1颗星" />
 					<img src="./images/icon-star-default.png" index="2" title="很差，给2颗星" />
 					<img src="./images/icon-star-default.png" index="3" title="一般般，给3颗星" />
-					<img src="./images/icon-star-default.png" index="4" title="很好，给4颗星" />
+			        <img src="./images/icon-star-default.png" index="4" title="很好，给4颗星" />
 					<img src="./images/icon-star-default.png" index="5" title="非常好，给5颗星" />
+					<input type="hidden" name="rate" value=${index } />
+				<input type="hidden" name="sceneId" value=${param.sceneId } />	
 				<input type="submit" value="打分">
 			</form>
 			<div class="gallery-grids">

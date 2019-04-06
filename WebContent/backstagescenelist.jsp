@@ -72,7 +72,7 @@
     
       <h3 class="am-icon-flag"><em></em> <a href="./backstagemovielist">景点管理</a></h3>
       <ul>
-        <li><a href="./backstagemovielist">景点列表</a></li>
+        <li><a href="./backstageSceneList">景点列表</a></li>
         <li><a href="addmovie.jsp">添加景点</a></li>
       </ul>
       
@@ -159,22 +159,20 @@
                 <th class="table-author am-hide-sm-only">简介</th>
                 <th class="table-type">图片地址</th>
                 <th class="table-author am-hide-sm-only">类型</th>
-                <th class="table-date am-hide-sm-only">评分</th>
                 <th width="163px" class="table-set">操作</th>
               </tr>
             </thead>
             <tbody>
-            <c:forEach items="${scenelist }" var="p">
+            <c:forEach items="${SceneList}" var="p">
               <tr>
-                <td>${p.scene_id}</td>
-                <td>${p.scene_name} <a href="re-moviename.jsp?id=${p.scene_id}"><span class="am-icon-pencil-square-o"></span></a></td>
-                <td>${p.movie_summary} <a href="re-introduction.jsp?id=${p.scene_id}"><span class="am-icon-pencil-square-o"></span></a></td>
+                <td>${p.sceneId}</td>
+                <td>${p.sceneName} <a href="re-moviename.jsp?id=${p.sceneId}"><span class="am-icon-pencil-square-o"></span></a></td>
+                <td>${p.sceneSumamry} <a href="re-introduction.jsp?id=${p.sceneId}"><span class="am-icon-pencil-square-o"></span></a></td>
                 <td>${p.scenePic}</td>
-                <td >${p.scene_type} <a href="re-time.jsp?id=${p.scene_id}"><span class="am-icon-pencil-square-o"></span></a></td>
-                <td >${p.rate} </td>
+                <td >${p.sceneType} <a href="re-time.jsp?id=${p.sceneId}"><span class="am-icon-pencil-square-o"></span></a></td>
                 <td><div class="am-btn-toolbar">
                     <div class="am-btn-group am-btn-group-xs">
-                      <a href="delete_movie?id=${p.scene_id}"><span class="am-icon-trash-o"></span></a>
+                      <a href="delete_movie?id=${p.sceneId}"><span class="am-icon-trash-o"></span></a>
                     </div>
                   </div></td>
               </tr>

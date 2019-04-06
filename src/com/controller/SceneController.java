@@ -43,6 +43,13 @@ public class SceneController {
 		return "hot";
 	}
 	
+	@GetMapping("/backstageSceneList")
+	public String getSceneList1(HttpServletRequest request) {
+		List<Scene> sceneList = sceneService.getSceneList("");
+		request.setAttribute("SceneList", sceneList);
+		return "backstagescenelist";
+	}
+	
 	/**
 	 * 查看单个景点页面
 	 * @param sceneId
