@@ -52,4 +52,26 @@ public class UserController {
 			return "login_error";
 		}
 	}
+	
+	/**
+	 * 获取用户列表
+	 * @param request
+	 * @return
+	 */
+	@GetMapping("/getUserList")
+	public String getUserList(HttpServletRequest request) {
+		List<User> userList = userService.getUserList();
+		request.setAttribute("userList", userList);
+		return "";
+	}
+	
+	/**
+	 * 删除用户
+	 * @param userId
+	 * @return
+	 */
+	@GetMapping("/deleteUser")
+	public String deleteUser(Integer userId) {
+		return "";
+	}
 }

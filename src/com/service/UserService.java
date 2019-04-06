@@ -1,5 +1,7 @@
 package com.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import com.dao.UserDao;
@@ -27,5 +29,21 @@ public class UserService {
 	public boolean userLogin(User user,HttpSession session) {
 		boolean isHaveUser = userDao.isHaveUser(user, session);
 		return isHaveUser;
+	}
+	
+	/**
+	 * 获取用户列表
+	 * @return
+	 */
+	public List<User> getUserList(){
+		return userDao.getUserList();
+	}
+	
+	/**
+	 * 删除用户
+	 * @param userId
+	 */
+	public void deleteUser(Integer userId) {
+		userDao.deleteUser(userId);
 	}
 }

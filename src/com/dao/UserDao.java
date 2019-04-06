@@ -2,6 +2,7 @@ package com.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -82,5 +83,33 @@ public class UserDao {
 		String subType = "insert into favor(user_id,type_id) values(?,?)";
 		Integer userId = user.getUserId();
 		Object[] params = new Object[] {userId,typeId};
+	}
+	
+	/**
+	 * 获取用户列表
+	 * @return
+	 */
+	public List<User> getUserList(){
+		String getUserList = "select * from user";
+		List<Map<String,Object>> userObj = JDBCUtil.executeQuery(getUserList);
+		List<User> userList = new ArrayList<>();
+		userObj.forEach(obj->{
+			User user = new User();
+			user.setUserId((int)obj.get("user_id"));	
+			user.setUserName(String.valueOf(obj.get("user_name")));
+			user.setEmail(String.valueOf(obj.get("email")));
+			userList.add(user);
+		});
+		
+		return userList;
+	}
+	
+	/**
+	 * 删除用户
+	 */
+	public void deleteUser(Integer userId) {
+		String deleteUser = "delete from user where user_id = ?";
+		Object[] params = new Object[] {userId};
+		JDBCUtil.ExcuteNoQuery(deleteUser, params);
 	}
 }
