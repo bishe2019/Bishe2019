@@ -41,7 +41,7 @@ public class test {
 	
 	public static void main(String[] args) {
 		MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setServerName("localhost_3306");
+        dataSource.setServerName("localhost");
         dataSource.setUser("root");
         dataSource.setPassword("");
         dataSource.setDatabaseName("bishe_db");
