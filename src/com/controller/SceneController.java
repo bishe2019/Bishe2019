@@ -73,7 +73,7 @@ public class SceneController {
 	@GetMapping("/deleteScene")
 	public String deleteScene(Integer sceneId) {
 		sceneService.deleteScene(sceneId);
-		return "";
+		return "redirect:/backstageSceneList";
 	}
 	
 }

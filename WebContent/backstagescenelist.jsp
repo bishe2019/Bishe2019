@@ -172,7 +172,7 @@
                 <td >${p.sceneType} <a href="re-time.jsp?id=${p.sceneId}"><span class="am-icon-pencil-square-o"></span></a></td>
                 <td><div class="am-btn-toolbar">
                     <div class="am-btn-group am-btn-group-xs">
-                      <a href="delete_movie?id=${p.sceneId}"><span class="am-icon-trash-o"></span></a>
+                      <a href="deleteScene?sceneId=${p.sceneId}"><span class="am-icon-trash-o"></span></a>
                     </div>
                   </div></td>
               </tr>
