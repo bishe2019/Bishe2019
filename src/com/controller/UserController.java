@@ -62,7 +62,7 @@ public class UserController {
 	public String getUserList(HttpServletRequest request) {
 		List<User> userList = userService.getUserList();
 		request.setAttribute("userList", userList);
-		return "";
+		return "backstageuserlist";
 	}
 	
 	/**
@@ -72,6 +72,7 @@ public class UserController {
 	 */
 	@GetMapping("/deleteUser")
 	public String deleteUser(Integer userId) {
-		return "";
+		userService.deleteUser(userId);
+		return "redirect:/getUserList";
 	}
 }

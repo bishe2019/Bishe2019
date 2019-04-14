@@ -77,7 +77,7 @@
       
       <h3 class="am-icon-users"><em></em> <a href="./backstageuserlist">用户管理</a></h3>
       <ul>
-        <li><a href="./backstageuserlist">用户列表 </a></li>
+        <li><a href="./getUserList">用户列表 </a></li>
       </ul>
       
     </div>

@@ -71,7 +71,7 @@
     
       <h3 class="am-icon-flag"><em></em> <a href="./backstagemovielist">景点管理</a></h3>
       <ul>
-        <li><a href="./backstagemovielist">景点列表</a></li>
+        <li><a href="./backstageSceneList">景点列表</a></li>
         <li><a href="addmovie.jsp">添加景点</a></li>
       </ul>
       
@@ -82,7 +82,7 @@
       
       <h3 class="am-icon-users"><em></em> <a href="./backstageuserlist">用户管理</a></h3>
       <ul>
-        <li><a href="./backstageuserlist">用户列表 </a></li>
+        <li><a href="./getUserList">用户列表 </a></li>
       </ul>
       
     </div>
@@ -352,11 +352,11 @@
               </tr>
             </thead>
             <tbody>
-              <c:forEach items="${list }" var="p">
+              <c:forEach items="${userList}" var="p">
               <tr>
                 
-                <td>${p.user_id}</td>
-                <td>${p.username}</td>
+                <td>${p.userId}</td>
+                <td>${p.userName}</td>
                 <td>${p.email}</td>
                 <td class="am-hide-sm-only">${p.phone}</td>
                 <td class="am-hide-sm-only">${p.age }</td>
@@ -364,7 +364,7 @@
                 <td> 	
                 	<div class="am-btn-toolbar">
                     <div class="am-btn-group am-btn-group-xs">
-                       <a href="UserDelete?id=${p.user_id}"><span class="am-icon-trash-o" ></span></a>
+                       <a href="deleteUser?userId=${p.userId}"><span class="am-icon-trash-o" ></span></a>
                     </div>
                   </div>
                 </td>
