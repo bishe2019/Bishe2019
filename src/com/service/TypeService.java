@@ -5,6 +5,7 @@ import java.util.List;
 import com.dao.TypeDao;
 import com.entity.Params;
 import com.entity.Type;
+import com.entity.User;
 
 public class TypeService {
 
@@ -31,8 +32,8 @@ public class TypeService {
 	 * @param params
 	 * @return
 	 */
-	public List<Type> getTypeList(Params params){
-		return typeDao.getTypeList(params);
+	public List<Type> getTypeList(Params params,User user){
+		return typeDao.getTypeList(params,user);
 	}
 	
 	/**

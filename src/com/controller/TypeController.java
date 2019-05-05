@@ -58,9 +58,10 @@ public class TypeController {
 	 * 获取类型列表
 	 * @return
 	 */
-	public String getTypeList(HttpServletRequest request) {
+	public String getTypeList(HttpServletRequest request,HttpSession session) {
 		Params params = new Params();
-		List<Type> typeList = typeService.getTypeList(params);
+		User user = (User) session.getAttribute("user");
+		List<Type> typeList = typeService.getTypeList(params,user);
 		request.setAttribute("typeList", typeList);
 		return "";
 	}

@@ -19,6 +19,8 @@ public class Type implements Serializable {
 
 	@Column(name="type_name")
 	private String typeName;
+	
+	private Integer isSub;
 
 	public Type() {
 	}
@@ -38,5 +40,15 @@ public class Type implements Serializable {
 	public void setTypeName(String typeName) {
 		this.typeName = typeName;
 	}
+
+	public Integer getIsSub() {
+		return isSub;
+	}
+
+	public void setIsSub(Integer isSub) {
+		this.isSub = isSub;
+	}
+	
+	
 
 }

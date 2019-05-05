@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.entity.Params;
 import com.entity.Type;
+import com.entity.User;
 import com.util.JDBCUtil;
 
 public class TypeDao {
@@ -35,13 +36,21 @@ public class TypeDao {
 	 * @param params
 	 * @return
 	 */
-	public List<Type> getTypeList(Params params){
+	public List<Type> getTypeList(Params params,User user){
 		StringBuilder getTypeList = new StringBuilder("select * from type");
+		StringBuilder getUserSubType = new StringBuilder("select type_id from favor where user_id = "+user.getUserId()+" and type_id is not null");
 		List<Type> typeList = new ArrayList<>();
 		if (params.getTypeName() != null) {
 			getTypeList.append(" where type_name like '%"+params.getTypeName()+"%'");
 		}
 		List<Map<String,Object>> objList = JDBCUtil.executeQuery(getTypeList.toString());
+		List<Map<String,Object>> userSubList = JDBCUtil.executeQuery(getUserSubType.toString());
+		List<Integer> typeIdList = new ArrayList<>();
+		userSubList.forEach(type->{
+			if (null != type.get("type_id")) {
+				typeIdList.add((Integer)type.get("type_id"));
+			}
+		});
 		objList.forEach(obj->{
 			Type type = new Type();
 			if (obj.get("type_id") != null) {
@@ -50,10 +59,14 @@ public class TypeDao {
 			if (obj.get("type_name") != null) {
 				type.setTypeName(String.valueOf(obj.get("type_name")));
 			}
+			if (typeIdList.contains((Integer)obj.get("type_id"))) {
+				type.setIsSub(1);
+			}else {
+				type.setIsSub(0);
+			}
 			typeList.add(type);
 		});
 		return typeList;
-		
 	}
 	
 	/**
