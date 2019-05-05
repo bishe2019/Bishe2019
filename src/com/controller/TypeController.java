@@ -96,7 +96,7 @@ public class TypeController {
 	 * @return
 	 */
 	public String sceneUnconnType(Integer sceneId,Integer typeId) {
-		typeService.sceneUnConnType(scenenId, typeId);
+		typeService.sceneUnConnType(sceneId, typeId);
 		return "";
 	}
 }
