@@ -66,20 +66,20 @@
     
     
      <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎系统管理员：清风抚雪</div>
-    <div class="sideMenu">
+  <div class="sideMenu">
     
-      <h3 class="am-icon-flag"><em></em> <a href="./backstagemovielist">景点管理</a></h3>
-       <ul>
+      <h3 class="am-icon-flag"><em></em> <a href="./backstageSceneList">景点管理</a></h3>
+      <ul>
         <li><a href="./backstageSceneList">景点列表</a></li>
         <li><a href="addmovie.jsp">添加景点</a></li>
       </ul>
       
-      <h3 class="am-icon-cart-plus"><em></em> <a href="./backstageactorlist">评论管理</a></h3>
+      <h3 class="am-icon-cart-plus"><em></em> <a href="./getTypelist">评论管理</a></h3>
       <ul>
-        <li><a href="./backstageactorlist">评论列表</a></li>
+        <li><a href="./getTypelist">类型列表</a></li>
       </ul>
       
-      <h3 class="am-icon-users"><em></em> <a href="./backstageuserlist">用户管理</a></h3>
+      <h3 class="am-icon-users"><em></em> <a href="./getUserList">用户管理</a></h3>
       <ul>
         <li><a href="./getUserList">用户列表 </a></li>
       </ul>
@@ -126,9 +126,9 @@
 <div class="admin-biaogelist">
 	
     <div class="listbiaoti am-cf">
-      <ul class="am-icon-flag on"> 评论列表</ul>
+      <ul class="am-icon-flag on"> 类型列表</ul>
       
-      <dl class="am-icon-home" style="float: right;"> 当前位置： 首页 > <a href="#">演员列表</a></dl>
+      <dl class="am-icon-home" style="float: right;"> 当前位置： 首页 > <a href="#">类型列表</a></dl>
       
       
     </div>
@@ -149,21 +149,20 @@
               <tr class="am-success">
                 
                 <th class="table-id">ID</th>
-                <th class="table-author am-hide-sm-only">演员名称</th>
-                <th class="table-author am-hide-sm-only">简介</th>
+                <th class="table-author am-hide-sm-only">类型名称</th>
                 <th width="163px" class="table-set">操作</th>
               </tr>
             </thead>
             <tbody>
-            <c:forEach items="${actorlist }" var="p">
+            <c:forEach items="${typeList }" var="p">
               <tr>
                
-                <td>${p.actor_id}</td>
-                <td>${p.actor_name} <a href="re-actor_name.jsp?actor_id=${p.actor_id}"><span class="am-icon-pencil-square-o"></span></a></td>
-                <td>${p.actor_summary} <a href="re-actor_summary.jsp?actor_id=${p.actor_id}"><span class="am-icon-pencil-square-o"></span></a></td>
+                <td>${p.typeId}</td>
+                <td>${p.typeName} <a href="re-actor_name.jsp?actor_id=${p.typeId}"><span class="am-icon-pencil-square-o"></span></a></td>
+    
                 <td><div class="am-btn-toolbar">
                     <div class="am-btn-group am-btn-group-xs">
-                      <a href="delete_actor?actor_id=${p.actor_id}"><span class="am-icon-trash-o"></span></a>
+                      <a href="delete_actor?actor_id=${p.typeId}"><span class="am-icon-trash-o"></span></a>
                     </div>
                   </div></td>
               </tr>

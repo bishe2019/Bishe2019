@@ -68,20 +68,20 @@
     
     
     <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎系统管理员：清风抚雪</div>
-    <div class="sideMenu">
+   <div class="sideMenu">
     
-      <h3 class="am-icon-flag"><em></em> <a href="./backstagemovielist">景点管理</a></h3>
-     <ul>
+      <h3 class="am-icon-flag"><em></em> <a href="./backstageSceneList">景点管理</a></h3>
+      <ul>
         <li><a href="./backstageSceneList">景点列表</a></li>
         <li><a href="addmovie.jsp">添加景点</a></li>
       </ul>
       
-      <h3 class="am-icon-cart-plus"><em></em> <a href="./backstageactorlist">评论管理</a></h3>
+      <h3 class="am-icon-cart-plus"><em></em> <a href="./getTypelist">评论管理</a></h3>
       <ul>
-        <li><a href="./backstageactorlist">评论列表</a></li>
+        <li><a href="./getTypelist">类型列表</a></li>
       </ul>
       
-      <h3 class="am-icon-users"><em></em> <a href="./backstageuserlist">用户管理</a></h3>
+      <h3 class="am-icon-users"><em></em> <a href="./getUserList">用户管理</a></h3>
       <ul>
         <li><a href="./getUserList">用户列表 </a></li>
       </ul>

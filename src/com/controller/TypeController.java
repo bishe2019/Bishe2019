@@ -72,12 +72,13 @@ public class TypeController {
 	 * 获取类型列表
 	 * @return
 	 */
+	@GetMapping("/getTypelist")
 	public String getTypeList(HttpServletRequest request,HttpSession session) {
 		Params params = new Params();
 		User user = (User) session.getAttribute("user");
 		List<Type> typeList = typeService.getTypeList(params,user);
 		request.setAttribute("typeList", typeList);
-		return "";
+		return "backstagecommentlist";
 	}
 	
 	/**
@@ -85,7 +86,7 @@ public class TypeController {
 	 * @param scenenId
 	 * @param typeId
 	 */
-	@GetMapping("/addScentType")
+	@GetMapping("/addscentType")
 	public String sceneConnType(Integer sceneId,Integer typeId,String sceneName) {
 		typeService.sceneConnType(sceneId, typeId);
 		return "redirect:/addSceneType?sceneId="+sceneId+"&sceneName="+sceneName+"";

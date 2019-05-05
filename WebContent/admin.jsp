@@ -40,10 +40,10 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					<div class="wthree-pro">
 						<h2>Login Here</h2>
 					</div>
-					<form action="AdminLogin" method="post">
-						<input placeholder="Username" name="admin_name" class="user" type="text" required="">
+					<form action="adminLogin" method="get">
+						<input placeholder="Username" name="administratorEmail" class="user" type="text" required="">
 						<span class="icon1"><i class="fa fa-user" ></i></span><br><br>
-						<input  placeholder="Password" name="admin_password" class="pass" type="password" required="">
+						<input  placeholder="Password" name="administratorPassword" class="pass" type="password" required="">
 						<span class="icon2"><i class="fa fa-unlock"></i></span><br>
 						<div class="sub-w3l">
 							<h6><a href="#">Forgot Password?</a></h6>

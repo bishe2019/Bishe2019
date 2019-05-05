@@ -85,10 +85,9 @@ String basePath = request.getScheme() + "://"
 					<input type="text"  name="sceneName" >
 					<input type="submit" value="搜索">
 				</form></li>
-									<li><a class="active" href="index.jsp">主页</a></li>
-										<li><a href="list.jsp">列表</a></li>
+									<li><a class="active" href="userLogin?email=${user.email}&password=${user.password}">主页</a></li>
+										<!-- <li><a href="list.jsp">列表</a></li> -->
 										<li><a href="getSceneList?sceneName=" >热门排行</a></li>					
-										<li><a href="typography.jsp">论坛</a></li>
 										<li><a href="contact.jsp">联系</a></li>
 									</ul>	
 									<div class="clearfix"> </div>
@@ -208,7 +207,7 @@ String basePath = request.getScheme() + "://"
 			</div>
 			<div class="agileits-services">
 				<div class="services-right-grids">
-				<c:forEach items="${SceneList}" var="p" begin="2" end="7" step="1">
+				<c:forEach items="${SceneList}" var="p" begin="2" end="4" step="1">
 					<div class="col-sm-4 services-right-grid">
 						<div class="services-icon hvr-radial-in">
 							<a href="getScene?sceneId=${p.sceneId}"><img src="<%=basePath%>images/${p.scenePic}" width="400" height="300"  /></a>
@@ -222,6 +221,29 @@ String basePath = request.getScheme() + "://"
 					<div class="clearfix"> </div>
 				</div>
 			</div>
+		</div>
+	</div>
+	<div class="services">
+		<div class="container">
+			<div class="gallery-grids">
+				<div class="w3l-heading" >
+				<h3>类型推荐</h3>
+				</div>
+				<c:forEach items="${subTypeScene}" var="c" begin="0" end="2" step="1">
+					<div class="col-md-4 gallery-grid" >
+						<div class="grid">
+						<a href="getScene?sceneId=${c.sceneId}">
+						<h5>${c.sceneName}</h5>
+							<figure class="effect-apollo">
+								<a class="example-image-link" href="getScene?sceneId=${c.sceneId}" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+									<img src="<%=basePath%>images/${c.scenePic}"  alt="" />
+									</a>
+								</a>
+							</figure>
+						</div>
+					</div>
+					</c:forEach>
+				</div>
 		</div>
 	</div>
 	<!-- //services -->

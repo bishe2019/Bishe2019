@@ -65,10 +65,11 @@ public class UserController {
 	 * @param request
 	 * @return
 	 */
+	@GetMapping("/indexshow")
 	public String getIndex(HttpServletRequest request) {
 		List<Scene> sceneList = sceneService.getSceneList("");
 		request.setAttribute("SceneList", sceneList);
-		return "";
+		return "index";
 	}
 	
 	/**
@@ -113,8 +114,9 @@ public class UserController {
 	 * @param session
 	 * @return
 	 */
+	@GetMapping("/remove_user")
 	public String logout(HttpSession session) {
 		session.removeAttribute("user");
-		return "";
+		return "redirect:/indexshow";
 	}
 }

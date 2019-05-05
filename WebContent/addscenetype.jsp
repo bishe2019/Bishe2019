@@ -70,22 +70,23 @@
     
     <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎系统管理员：清风抚雪</div>
     <div class="sideMenu">
-      <h3 class="am-icon-flag"><em></em> <a href="./backstagemovielist">电影管理</a></h3>
+    
+      <h3 class="am-icon-flag"><em></em> <a href="./backstageSceneList">景点管理</a></h3>
       <ul>
-        <li><a href="./backstagemovielist">电影列表</a></li>
-        <li><a href="addmovie.jsp">添加电影</a></li>
+        <li><a href="./backstageSceneList">景点列表</a></li>
+        <li><a href="addmovie.jsp">添加景点</a></li>
       </ul>
       
-      <h3 class="am-icon-cart-plus"><em></em> <a href="./backstageactorlist">演员管理</a></h3>
+      <h3 class="am-icon-cart-plus"><em></em> <a href="./getTypelist">评论管理</a></h3>
       <ul>
-        <li><a href="./backstageactorlist">演员列表</a></li>
-        <li><a href="addactor.jsp">添加演员</a></li>
+        <li><a href="./getTypelist">类型列表</a></li>
       </ul>
       
-      <h3 class="am-icon-users"><em></em> <a href="./backstageuserlist">用户管理</a></h3>
+      <h3 class="am-icon-users"><em></em> <a href="./getUserList">用户管理</a></h3>
       <ul>
-        <li><a href="./backstageuserlist">用户列表 </a></li>
+        <li><a href="./getUserList">用户列表 </a></li>
       </ul>
+      
     </div>
     <!-- sideMenu End --> 
     
@@ -146,7 +147,7 @@
 			<c:forEach items="${connTypeList}" var="c">
 				<li>
 					<div style="float:left;width:60%;text-align:center">${c.typeName}</div>
-					<div style="float:left;width:35%;text-align:center;"><a href="deleteScentType?typeId=${p.typeId}&sceneId=${sceneId}&sceneName=${sceneName}">取消关联</a></div>
+					<div style="float:left;width:35%;text-align:center;"><a href="deleteScentType?typeId=${c.typeId}&sceneId=${sceneId}&sceneName=${sceneName}">取消关联</a></div>
 				</li>
 			</c:forEach>
 		</ul>
@@ -156,7 +157,7 @@
 			<c:forEach items="${unConnTypeList}" var="p">
 				<li>
 					<div style="float:left;width:60%;text-align:center">${p.typeName}</div>
-					<div style="float:left;width:35%;text-align:center;"><a href="addScentType?typeId=${p.typeId}&sceneId=${sceneId}&sceneName=${sceneName}">添加关联</a></div>
+					<div style="float:left;width:35%;text-align:center;"><a href="addscentType?typeId=${p.typeId}&sceneId=${sceneId}&sceneName=${sceneName}">添加关联</a></div>
 				</li>
 			</c:forEach>
 		</ul>

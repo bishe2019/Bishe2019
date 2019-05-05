@@ -105,7 +105,8 @@ public class SceneController {
 		request.setAttribute("unConnTypeList", unConnTypeList);
 		request.setAttribute("connTypeList", connTypeList);
 		request.setAttribute("sceneName", sceneName );
-		return "";
+		request.setAttribute("sceneId", sceneId );
+		return "addscenetype";
 	}
 	
 	/**

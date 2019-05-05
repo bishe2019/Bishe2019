@@ -139,6 +139,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		margin-left:320px;
  
 	}
+	.xiao-goLogin-box1{
+		position:absolute;
+		width: 220px;
+		height: 20px;
+		margin-top: 370px;
+		margin-left:320px;
+ 
+	}
+
  
 	</style>
 </head>
@@ -174,12 +183,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</button>
 									</div>
 								<!-- Collect the nav links, forms, and other content for toggling -->
-								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								
+								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">		
 									<ul class="nav navbar-nav">
-									<li><a class="active" href="index.jsp">主页</a></li>
-										<li><a href="list.jsp">列表</a></li>
-										<li><a href="hot.jsp">热门排行</a></li>					
-										<li><a href="typography.jsp">论坛</a></li>
+									<li><form action="getSceneList" method="get">
+					<input type="text"  name="sceneName" >
+					<input type="submit" value="搜索">
+				</form></li>
+									<li><a class="active" href="userLogin?email=${user.email}&password=${user.password}">主页</a></li>
+										<!-- <li><a href="list.jsp">列表</a></li> -->
+										<li><a href="getSceneList?sceneName=" >热门排行</a></li>					
 										<li><a href="contact.jsp">联系</a></li>
 									</ul>	
 									<div class="clearfix"> </div>
@@ -187,11 +200,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</nav>		
 						</div>
 						<div class="agileinfo-social-grids">
+							
 							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss"></i></a></li>
-								<li><a href="#"><i class="fa fa-vk"></i></a></li>
+								<li><c:if test="${! empty  user.userId }" >
+									 <a href="userCenter">
+						 			<button class="btn btn-primary" data-toggle="modal" >  		            
+                						<td style="font-weight:900;font-size: 100%;color:white;"> ${user.userName }  <td> 	 
+                		 			</button>  
+                	     			</a>
+                	     			<a href = "remove_user">注销</a>      			    
+                					</c:if>   
+                					<c:if test="${empty  user.userId }" >	
+               	    	 			 <a href="login.jsp"><button class="btn btn-primary" data-toggle="modal" >  		           
+                			<td  style="font-weight:900;font-size: 100%;color:white;">未登录</td> 	
+                		 </button>   </a>
+                					 </c:if>    
+                				</li>
+								
 							</ul>
 						</div>
 						<div class="clearfix"> </div>
@@ -231,6 +256,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 				<div class="xiao-goLogin-box">
 					<a href="#" style="text-decoration: none;">忘记密码</a>
+				</div>
+				<div class="xiao-goLogin-box1" style="margin-left:420px;">
+					<a href="register.jsp" >注册</a>
 				</div>
 			</form>
 		</div>
