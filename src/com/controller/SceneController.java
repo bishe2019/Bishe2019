@@ -52,6 +52,18 @@ public class SceneController {
 	}
 	
 	/**
+	 * 按类型获取景点列表
+	 * @param request
+	 * @param typeId
+	 * @return
+	 */
+	public String getSceneListByType(HttpServletRequest request,Integer typeId) {
+		List<Scene> sceneList = sceneService.getScnenByTypeId(typeId);
+		request.setAttribute("SceneList", sceneList);
+		return "";
+	}
+	
+	/**
 	 * 查看单个景点页面
 	 * @param sceneId
 	 * @return
@@ -88,7 +100,7 @@ public class SceneController {
 		List<Type> connTypeList = sceneService.getSceneTypeList(sceneId, 2);
 		request.setAttribute("unConnTypeList", unConnTypeList);
 		request.setAttribute("connTypeList", connTypeList);
-		request.setAttribute("sceneName", sceneName);
+		request.setAttribute("sceneName", sceneName );
 		return "";
 	}
 	
