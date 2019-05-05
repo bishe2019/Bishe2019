@@ -94,4 +94,14 @@ public class UserController {
 		request.setAttribute("sceneList", sceneList);
 		return "personl";
 	}
+	
+	/**
+	 * ×¢Ïú
+	 * @param session
+	 * @return
+	 */
+	public String logout(HttpSession session) {
+		session.removeAttribute("user");
+		return "";
+	}
 }
