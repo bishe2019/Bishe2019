@@ -83,4 +83,13 @@ public class SceneService {
 	public List<Type> getSceneTypeList(Integer sceneId,int mode){
 		return sceneDao.getSceneTypeList(sceneId, mode);
 	}
+	
+	/**
+	 * 获取用户关注类型的列表
+	 * @param user
+	 * @return
+	 */
+	public List<Scene> getUserSubSceneList(User user){
+		return sceneDao.getUserSubSceneList(user);
+	}
 }

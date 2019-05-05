@@ -3,6 +3,7 @@ package com.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import com.entity.Comment;
 import com.entity.Params;
 import com.entity.Scene;
 import com.entity.Type;
+import com.entity.User;
 import com.service.CommentService;
 import com.service.SceneService;
 
@@ -50,6 +52,7 @@ public class SceneController {
 		request.setAttribute("SceneList", sceneList);
 		return "backstagescenelist";
 	}
+	
 	
 	/**
 	 * 按类型获取景点列表
@@ -113,6 +116,18 @@ public class SceneController {
 	public String getConType(HttpServletRequest request,Integer sceneId) {
 		List<Type> typeList = sceneService.getSceneTypeList(sceneId, 2);
 		request.setAttribute("typeList", typeList);
+		return "";
+	}
+	
+	/**
+	 * 获取用户关注的类型的景点列表
+	 * @param session
+	 * @return
+	 */
+	public String getUserSubSceneList(HttpSession session,HttpServletRequest request) {
+		User user = (User) session.getAttribute("user");
+		List<Scene> sceneList = sceneService.getUserSubSceneList(user);
+		request.setAttribute("sceneList", sceneList);
 		return "";
 	}
 	

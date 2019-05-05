@@ -12,6 +12,8 @@ import com.entity.Type;
 import com.entity.User;
 import com.util.JDBCUtil;
 
+import antlr.StringUtils;
+
 public class SceneDao {
 
 	/**
@@ -210,6 +212,48 @@ public class SceneDao {
 			sceneList.add(scene);
 		});
 		return sceneList;
+	}
+	
+	/**
+	 * 获取用户关注的类型的景点
+	 * @param user
+	 * @return
+	 */
+	public List<Scene> getUserSubSceneList(User user){
+		String getUserSubType = "select * from favor where user_id = ? and type_id is not null";
+		Integer userId = user.getUserId();
+		List<Map<String,Object>> userSubTytpe = JDBCUtil.executeQuery(getUserSubType, userId);
+		if (!userSubTytpe.isEmpty()) {
+			List<String> typeIdList = new ArrayList<>();
+			userSubTytpe.forEach(t->{
+				if (null != t.get("type_id")) {
+					typeIdList.add(t.get("type_id").toString());
+				}
+			});
+			String typeids = String.join(",", typeIdList);
+			String getSceneByType = "select * from scene where scene_id in (select distinct scene_id from scene_type where type_id in  ("+typeids+"))";
+			List<Map<String,Object>> sceneMapList = JDBCUtil.executeQuery(getSceneByType);
+			List<Scene> sceneList = new ArrayList<>();
+			sceneMapList.forEach(map->{
+				Scene scene = new Scene();
+				if (null != map.get("scene_id")) {
+					scene.setSceneId((int) map.get("scene_id"));
+				}
+				if (null != map.get("scene_name")) {
+					scene.setSceneName(map.get("scene_name").toString());
+				}
+				if (null != map.get("scene_sumary")) {
+					scene.setSceneSumamry(map.get("scene_sumary").toString());
+				}
+				if (null != map.get("scene_pic")) {
+					scene.setScenePic(map.get("scene_pic").toString());
+				}
+				sceneList.add(scene);
+			});
+			return sceneList;
+		}else {
+			return getSceneList("");
+		}
 	}
 	
 	
