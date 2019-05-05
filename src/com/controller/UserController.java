@@ -61,6 +61,17 @@ public class UserController {
 	}
 	
 	/**
+	 * 未登录主页
+	 * @param request
+	 * @return
+	 */
+	public String getIndex(HttpServletRequest request) {
+		List<Scene> sceneList = sceneService.getSceneList("");
+		request.setAttribute("SceneList", sceneList);
+		return "";
+	}
+	
+	/**
 	 * 获取用户列表
 	 * @param request
 	 * @return
