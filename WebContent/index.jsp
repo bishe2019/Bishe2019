@@ -99,7 +99,7 @@ String basePath = request.getScheme() + "://"
 							
 							<ul>
 								<li><c:if test="${! empty  user.userId }" >
-									 <a href="personal.jsp">
+									 <a href="userCenter">
 						 			<button class="btn btn-primary" data-toggle="modal" >  		            
                 						<td style="font-weight:900;font-size: 100%;color:white;"> ${user.userName }  <td> 	 
                 		 			</button>  

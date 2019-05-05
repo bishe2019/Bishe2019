@@ -29,7 +29,7 @@ public class TypeController {
 		User user = (User) session.getAttribute("user");
 		Integer userId = user.getUserId();
 		typeService.userSubType(userId, typeId);
-		return "";
+		return "redirect:/userCenter";
 	}
 	
 	/**
@@ -38,11 +38,12 @@ public class TypeController {
 	 * @param typeId
 	 * @return
 	 */
+	@GetMapping("/deleteUserType")
 	public String userUnSubType(HttpSession session,Integer typeId) {
 		User user = (User) session.getAttribute("user");
 		Integer userId = user.getUserId();
 		typeService.userUnSubType(userId, typeId);
-		return "";
+		return "redirect:/userCenter";
 	}
 	
 	/**
@@ -84,9 +85,10 @@ public class TypeController {
 	 * @param scenenId
 	 * @param typeId
 	 */
-	public String sceneConnType(Integer scenenId,Integer typeId) {
-		typeService.sceneConnType(scenenId, typeId);
-		return "";
+	@GetMapping("/addScentType")
+	public String sceneConnType(Integer sceneId,Integer typeId,String sceneName) {
+		typeService.sceneConnType(sceneId, typeId);
+		return "redirect:/addSceneType?sceneId="+sceneId+"&sceneName="+sceneName+"";
 	} 
 	
 	/**
@@ -95,8 +97,9 @@ public class TypeController {
 	 * @param typeId
 	 * @return
 	 */
-	public String sceneUnconnType(Integer sceneId,Integer typeId) {
+	@GetMapping("/deleteScentType")
+	public String sceneUnconnType(Integer sceneId,Integer typeId,String sceneName) {
 		typeService.sceneUnConnType(sceneId, typeId);
-		return "";
+		return "redirect:/addSceneType?sceneId="+sceneId+"&sceneName="+sceneName+"";
 	}
 }

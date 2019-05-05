@@ -98,6 +98,7 @@ public class SceneController {
 	 * @param sceneId
 	 * @return
 	 */
+	@GetMapping("/addSceneType")
 	public String getUnConType(HttpServletRequest request,Integer sceneId,String sceneName) {
 		List<Type> unConnTypeList = sceneService.getSceneTypeList(sceneId, 1);
 		List<Type> connTypeList = sceneService.getSceneTypeList(sceneId, 2);

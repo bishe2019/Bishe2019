@@ -90,6 +90,6 @@ public class UserController {
 		List<Scene> sceneList = sceneService.getUserRateSceneList(user);
 		request.setAttribute("typeList", typeList);
 		request.setAttribute("sceneList", sceneList);
-		return "";
+		return "personl";
 	}
 }

@@ -22,7 +22,7 @@ body{
 .banner{
 	background: url(../images/1.jpg) no-repeat 0px 0px;
     background-size: cover;
-    padding: 0em 0 4em;
+/*     padding: 0em 0 4em; */
 }
 /*-- header-left --*/
 .header {
@@ -141,6 +141,11 @@ ul.dropdown-menu {
     left: 0;
     min-width: 90px;
 }
+
+.facepic{
+	margin-left: 20px;
+}
+
 .dropdown-menu > li > a {
     display: block;
     padding: 0px 0px !important;

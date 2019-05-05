@@ -21,10 +21,10 @@ public class RateController {
 	 * @return
 	 */
 	@GetMapping("/getRate")
-	public String saveRate(HttpSession session,Integer sceneId,Integer rate) {
+	public String saveRate(HttpSession session,Integer sceneId,Integer rate1) {
 		User user = (User) session.getAttribute("user");
-		rateService.saveRate(user.getUserId(), sceneId, rate);
+		rateService.saveRate(user.getUserId(), sceneId, rate1);
 		
-		return "index";
+		return "redirect:/getScene?sceneId="+sceneId;
 	}
 }

@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>景点列表-后台管理系统</title>
+<title>景点添加-后台管理系统</title>
 <meta name="description" content="这是一个 index 页面">
 <meta name="keywords" content="index">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -37,10 +37,11 @@
   <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
     <ul class="am-nav am-nav-pills am-topbar-nav admin-header-list">
 
-
+   <li class="am-dropdown tognzhi" data-am-dropdown>
+ 
+</li>
 
  <li class="kuanjie">
- 	
  	
  </li>
 
@@ -48,7 +49,7 @@
  	
 <p>   
 	
-	
+
 </p>
 
 
@@ -69,23 +70,22 @@
     
     <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎系统管理员：清风抚雪</div>
     <div class="sideMenu">
-    
-      <h3 class="am-icon-flag"><em></em> <a href="./backstagemovielist">景点管理</a></h3>
-     <ul>
-        <li><a href="./backstageSceneList">景点列表</a></li>
-        <li><a href="addmovie.jsp">添加景点</a></li>
+      <h3 class="am-icon-flag"><em></em> <a href="./backstagemovielist">电影管理</a></h3>
+      <ul>
+        <li><a href="./backstagemovielist">电影列表</a></li>
+        <li><a href="addmovie.jsp">添加电影</a></li>
       </ul>
       
-      <h3 class="am-icon-cart-plus"><em></em> <a href="./backstageactorlist">评论管理</a></h3>
+      <h3 class="am-icon-cart-plus"><em></em> <a href="./backstageactorlist">演员管理</a></h3>
       <ul>
-        <li><a href="./backstageactorlist">评论列表</a></li>
+        <li><a href="./backstageactorlist">演员列表</a></li>
+        <li><a href="addactor.jsp">添加演员</a></li>
       </ul>
       
       <h3 class="am-icon-users"><em></em> <a href="./backstageuserlist">用户管理</a></h3>
       <ul>
-        <li><a href="./getUserList">用户列表 </a></li>
+        <li><a href="./backstageuserlist">用户列表 </a></li>
       </ul>
-      
     </div>
     <!-- sideMenu End --> 
     
@@ -114,7 +114,7 @@
 	
 		<div class="daohang">
 			<ul>
-				
+			
 				
 			</ul>
 
@@ -129,73 +129,84 @@
 <div class="admin-biaogelist">
 	
     <div class="listbiaoti am-cf">
-      <ul class="am-icon-flag on"> 景点列表</ul>
+      <ul class="am-icon-flag on"> 栏目名称</ul>
       
-      <dl class="am-icon-home" style="float: right;"> 当前位置： 首页 > <a href="#">景点列表</a></dl>
-      
-      <dl>
-        <button type="button" class="am-btn am-btn-danger am-round am-btn-xs am-icon-plus"> <a href="addmovie.jsp">新增景点</a></button>
-      </dl>
+      <dl class="am-icon-home" style="float: right;"> 当前位置： 添加电影 </dl>
+
       
       
     </div>
 	
-	<div class="am-btn-toolbars am-btn-toolbar am-kg am-cf">
-  <ul>
-  <form action = "back_search_movie"  >  
-    <li><input type="text" class="am-form-field am-input-sm am-input-xm" name = "name" placeholder="关键词搜索" /></li>
-    <li><button  class="am-btn am-radius am-btn-xs am-btn-success" style="margin-top: -1px;">搜索</button></li>
-  </form>
-  </ul>
-</div>
+    <div class="fbneirong">
+    
+    <h3>景点名称：${sceneName}</h3>
+    <div class="am-form-group am-cf">
+    <div class="left">
+    	<ul>
+			<c:forEach items="${connTypeList}" var="c">
+				<li>
+					<div style="float:left;width:60%;text-align:center">${c.typeName}</div>
+					<div style="float:left;width:35%;text-align:center;"><a href="deleteScentType?typeId=${p.typeId}&sceneId=${sceneId}&sceneName=${sceneName}">取消关联</a></div>
+				</li>
+			</c:forEach>
+		</ul>
+    </div>
+    <div class="right" >
+    	<ul>
+			<c:forEach items="${unConnTypeList}" var="p">
+				<li>
+					<div style="float:left;width:60%;text-align:center">${p.typeName}</div>
+					<div style="float:left;width:35%;text-align:center;"><a href="addScentType?typeId=${p.typeId}&sceneId=${sceneId}&sceneName=${sceneName}">添加关联</a></div>
+				</li>
+			</c:forEach>
+		</ul>
+    </div>
+    </div>
+      <!-- <form class="am-form" action="insertScene" method="get" >
+        <div class="am-form-group am-cf">
+          <div class="zuo">景点名称：</div>
+          <div class="you">
+            <input type="text" name="sceneName" class="am-input-sm" id="doc-ipt-email-1" placeholder="请输入景点名称">
+          </div>
+        </div>
+        <div class="am-form-group am-cf">
+          <div class="zuo">简介：</div>
+          <div class="you">
+            <input type="text"  name="sceneSumamry"class="am-input-sm" id="doc-ipt-pwd-1" placeholder="请输入简介">
+          </div>
+        </div>
+        <div class="am-form-group am-cf">
+          <div class="zuo">图片路径：</div>
+          <div class="you">
+            <input type="text"  name="scenePic" class="am-input-sm" id="doc-ipt-pwd-1" placeholder="请输入图片路径">
+          </div>
+        </div>
+            <div class="you" style="margin-left: 11%;padding-top:5%;" >
+              <input type="submit" value="新增电影"> 
 
+          </div> -->
+        </div>
+        
+        <!-- div class="am-form-group am-cf">
+          <div class="zuo">产品图片：</div>
+          <div class="you" style="height: 45px;">
+            <input type="file" name="listimg" id="doc-ipt-file-1">
+            <p class="am-form-help">请选择要上传的文件...</p>
+          </div>
+        </div-->
+        
+        
+        
+        <div class="am-form-group am-cf" style="margin-top:5%;">
+          
+        </div>
+      </form>
+    </div>
 
-    <form class="am-form am-g">
-          <table width="100%" class="am-table am-table-bordered am-table-radius am-table-striped">
-            <thead>
-              <tr class="am-success">
-                <th class="table-id">ID</th>
-                <th class="table-author am-hide-sm-only">名称</th>
-                <th class="table-author am-hide-sm-only">简介</th>
-                <th class="table-type">图片地址</th>
-                <th class="table-author am-hide-sm-only">类型</th>
-                <th width="163px" class="table-set">操作</th>
-              </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${SceneList}" var="p">
-              <tr>
-                <td>${p.sceneId}</td>
-                <td>${p.sceneName} <a href="re-moviename.jsp?id=${p.sceneId}"><span class="am-icon-pencil-square-o"></span></a></td>
-                <td>${p.sceneSumamry} <a href="re-introduction.jsp?id=${p.sceneId}"><span class="am-icon-pencil-square-o"></span></a></td>
-                <td>${p.scenePic}</td>
-                <td >${p.sceneType} <a href="re-time.jsp?id=${p.sceneId}"><span class="am-icon-pencil-square-o"></span></a></td>
-                <td><div class="am-btn-toolbar">
-                    <div class="am-btn-group am-btn-group-xs">
-                      <a href="deleteScene?sceneId=${p.sceneId}"><span class="am-icon-trash-o"></span></a>
-                    </div>
-                    <div class="am-btn-group">
-                      <a href="addSceneType?sceneId=${p.sceneId}&sceneName=${p.sceneName}"><span class="am-icon-road"></span></a>
-                    </div>
-                  </div></td>
-              </tr>
-              	</c:forEach>
-            </tbody>
-          </table>
-          
-          
-          
-          
-      
-          <hr />
-          <p>注：.....</p>
-        </form>
- 
- 
- 
+  
  
  <div class="foods">
- 	<p>
+  	<p>
 					唯一指定邮箱：248207330@qq.com
 			© 2018 My Show | Design by  <a
 				href="#">七仙女</a>

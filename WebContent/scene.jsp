@@ -181,6 +181,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			        <img src="./images/icon-star-default.png" index="4" title="很好，给4颗星" />
 					<img src="./images/icon-star-default.png" index="5" title="非常好，给5颗星" />
 					<input type="hidden" name="rate" value=${index } />
+					<input type="hidden" id="star" name="rate1" value="2"/>
 				<input type="hidden" name="sceneId" value=${param.sceneId } />	
 				<input type="submit" value="打分">
 			</form>
@@ -352,6 +353,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		for (var i = 0; i < n.length; i++) {
 			n[i].onclick = function() {
 				var index = this.getAttribute("index");
+				document.getElementById("star").value = index;
 				console.log(index)
 				if (index > 2) {
 					for (var i = 0; i < index; i++) {
