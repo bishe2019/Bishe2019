@@ -2,8 +2,11 @@ package com.test;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.impl.model.jdbc.MySQLJDBCDataModel;
@@ -25,6 +28,7 @@ import com.dao.CommentDao;
 import com.dao.RateDao;
 import com.dao.UserDao;
 import com.entity.Comment;
+import com.entity.Scene;
 import com.entity.User;
 import com.mysql.jdbc.Statement;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
@@ -73,8 +77,6 @@ public class test {
 		                
 		                //插入用户的推荐数据
 		                stmt.execute(insertSQL);
-		                
-		                
 		                System.out.println(recommendation);
 		            }
 			 }
@@ -85,5 +87,6 @@ public class test {
 		
 		
 	}
+	
 
 }

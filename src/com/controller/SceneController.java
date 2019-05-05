@@ -83,9 +83,12 @@ public class SceneController {
 	 * @param sceneId
 	 * @return
 	 */
-	public String getUnConType(HttpServletRequest request,Integer sceneId) {
-		List<Type> typeList = sceneService.getSceneTypeList(sceneId, 1);
-		request.setAttribute("typeList", typeList);
+	public String getUnConType(HttpServletRequest request,Integer sceneId,String sceneName) {
+		List<Type> unConnTypeList = sceneService.getSceneTypeList(sceneId, 1);
+		List<Type> connTypeList = sceneService.getSceneTypeList(sceneId, 2);
+		request.setAttribute("unConnTypeList", unConnTypeList);
+		request.setAttribute("connTypeList", connTypeList);
+		request.setAttribute("sceneName", sceneName);
 		return "";
 	}
 	
