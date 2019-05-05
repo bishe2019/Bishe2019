@@ -33,7 +33,9 @@ public class UserController {
 	public String userRegister(HttpSession session,User user,HttpServletRequest request) {
 		userService.userRegister(user, session);
 		List<Scene> sceneList = sceneService.getSceneList("");
+		List<Scene> subTypeScene = sceneService.getUserSubSceneList(user);
 		request.setAttribute("SceneList", sceneList);
+		request.setAttribute("subTypeScene", subTypeScene);
 		return "index";
 	}
 	
