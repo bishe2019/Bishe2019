@@ -49,7 +49,9 @@ public class UserController {
 		boolean isHave = userService.userLogin(user, session);
 		if (isHave) {
 			List<Scene> sceneList = sceneService.getSceneList("");
+			List<Scene> subTypeScene = sceneService.getUserSubSceneList(user);
 			request.setAttribute("SceneList", sceneList);
+			request.setAttribute("subTypeScene", subTypeScene);
 			return "index";
 		}else {
 			return "login_error";
