@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import com.dao.SceneDao;
 import com.entity.Params;
 import com.entity.Scene;
+import com.entity.Type;
 import com.entity.User;
 
 public class SceneService {
@@ -71,5 +72,15 @@ public class SceneService {
 	 */
 	public List<Scene> getUserRateSceneList(User user){
 		return sceneDao.getUserRateSceneList(user);
+	}
+	
+	/**
+	 * 获取景点的关联类型列表
+	 * @param sceneId
+	 * @param mode
+	 * @return
+	 */
+	public List<Type> getSceneTypeList(Integer sceneId,int mode){
+		return sceneDao.getSceneTypeList(sceneId, mode);
 	}
 }

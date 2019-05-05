@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.entity.Comment;
 import com.entity.Params;
 import com.entity.Scene;
+import com.entity.Type;
 import com.service.CommentService;
 import com.service.SceneService;
 
@@ -74,6 +75,30 @@ public class SceneController {
 	public String deleteScene(Integer sceneId) {
 		sceneService.deleteScene(sceneId);
 		return "redirect:/backstageSceneList";
+	}
+	
+	/**
+	 * 获取景点未关联的类型
+	 * @param request
+	 * @param sceneId
+	 * @return
+	 */
+	public String getUnConType(HttpServletRequest request,Integer sceneId) {
+		List<Type> typeList = sceneService.getSceneTypeList(sceneId, 1);
+		request.setAttribute("typeList", typeList);
+		return "";
+	}
+	
+	/**
+	 * 获取景点已关联的类型
+	 * @param request
+	 * @param sceneId
+	 * @return
+	 */
+	public String getConType(HttpServletRequest request,Integer sceneId) {
+		List<Type> typeList = sceneService.getSceneTypeList(sceneId, 2);
+		request.setAttribute("typeList", typeList);
+		return "";
 	}
 	
 }

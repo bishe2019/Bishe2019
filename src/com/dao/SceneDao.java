@@ -162,8 +162,26 @@ public class SceneDao {
 	 * @param mode
 	 * @return
 	 */
-	public List<Type> getSceneTypeList(Integer SceneId,int mode){
-		return null;
+	public List<Type> getSceneTypeList(Integer sceneId,int mode){
+		StringBuilder getSceneTypeList = new StringBuilder("select * from type ");
+		if ( mode == 1 ) {
+			getSceneTypeList.append(" where type_id not in (select type_id from scene_type where scene_id = "+sceneId+")");
+		}else if ( mode == 2 ) {
+			getSceneTypeList.append(" where type_id in (select type_id from scene_type where scene_id = "+sceneId+")");
+		}
+		List<Map<String,Object>> typeMapList = JDBCUtil.executeQuery(getSceneTypeList.toString());
+		List<Type> typeList = new ArrayList<>();
+		typeMapList.forEach(map->{
+			Type type = new Type();
+			if (map.get("type_id") != null) {
+				type.setTypeId((int) map.get("type_id"));
+			}
+			if (map.get("type_name") != null) {
+				type.setTypeName(String.valueOf(map.get("type_name")));
+			}
+			typeList.add(type);
+		});
+		return typeList;
 	}
 	
 	/**

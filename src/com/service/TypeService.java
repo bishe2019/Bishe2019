@@ -44,4 +44,31 @@ public class TypeService {
 	public void userSubType(Integer userId,Integer typeId) {
 		typeDao.userSubType(userId, typeId);
 	}
+	
+	/**
+	 * 用户取关类型
+	 * @param userId
+	 * @param typeId
+	 */
+	public void userUnSubType(Integer userId,Integer typeId) {
+		typeDao.userUnSubType(userId, typeId);
+	}
+	
+	/**
+	 * 景点关联类型
+	 * @param scenenId
+	 * @param typeId
+	 */
+	public void sceneConnType(Integer scenenId,Integer typeId) {
+		typeDao.sceneConnType(scenenId, typeId);
+	}
+	
+	/**
+	 * 景点取消关联类型
+	 * @param scenenId
+	 * @param typeId
+	 */
+	public void sceneUnConnType(Integer scenenId,Integer typeId) {
+		typeDao.sceneUnConnType(scenenId, typeId);
+	}
 }

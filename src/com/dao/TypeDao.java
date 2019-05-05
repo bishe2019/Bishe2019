@@ -79,4 +79,33 @@ public class TypeDao {
 		Object[] params = new Object[] {userId,typeId};
 		JDBCUtil.ExcuteNoQuery(userSubType, params);
 	}
+	
+	/**
+	 * 用户取关类型
+	 * @param userId
+	 * @param typeId
+	 */
+	public void userUnSubType(Integer userId,Integer typeId) {
+		String userUnSubType = "delete from favor where user_id = ? and type_id = ?";
+		JDBCUtil.ExcuteNoQuery(userUnSubType,new Object[] {userId,typeId});
+	}
+	
+	/**
+	 * 景点关联类型
+	 * @param scenenId
+	 * @param typeId
+	 */
+	public void sceneConnType(Integer scenenId,Integer typeId) {
+		String sceneConnType = "insert into scene_type (scene_id,type_id) values (?,?)";
+		JDBCUtil.ExcuteNoQuery(sceneConnType, new Object[] {scenenId,typeId});
+	}
+	/**
+	 * 景点取消关联类型
+	 * @param scenenId
+	 * @param typeId
+	 */
+	public void sceneUnConnType(Integer scenenId,Integer typeId) {
+		String sceneConnType = "insert into scene_type (scene_id,type_id) values (?,?)";
+		JDBCUtil.ExcuteNoQuery(sceneConnType, new Object[] {scenenId,typeId});
+	}
 }
