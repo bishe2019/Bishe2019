@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import com.dao.SceneDao;
 import com.entity.Params;
 import com.entity.Scene;
+import com.entity.User;
 
 public class SceneService {
 	SceneDao sceneDao = new SceneDao();
@@ -61,5 +62,14 @@ public class SceneService {
 	 */
 	public void selectType(Integer sceneId,Integer typeId) {
 		sceneDao.selectType(sceneId, typeId);
+	}
+	
+	/**
+	 * 获取用户打分的景点信息
+	 * @param user
+	 * @return
+	 */
+	public List<Scene> getUserRateSceneList(User user){
+		return sceneDao.getUserRateSceneList(user);
 	}
 }

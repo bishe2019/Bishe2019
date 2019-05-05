@@ -12,7 +12,6 @@ public class RateDao {
 	 */
 	public void saveRate(Integer userId,Integer sceneId,Integer rate) {
 		String saveRate = "insert into rate(user_id,scene_id,rate) values (?,?,?)";
-		
 		Object[] params = new Object[] {userId,sceneId,rate};
 		JDBCUtil.ExcuteNoQuery(saveRate, params);
 	}

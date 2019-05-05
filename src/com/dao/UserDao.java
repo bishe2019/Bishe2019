@@ -112,4 +112,5 @@ public class UserDao {
 		Object[] params = new Object[] {userId};
 		JDBCUtil.ExcuteNoQuery(deleteUser, params);
 	}
+	
 }

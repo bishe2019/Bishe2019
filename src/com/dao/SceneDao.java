@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.entity.Params;
 import com.entity.Scene;
+import com.entity.Type;
+import com.entity.User;
 import com.util.JDBCUtil;
 
 public class SceneDao {
@@ -153,6 +155,45 @@ public class SceneDao {
 		Object[] params = new Object[] {sceneId,typeId};
 		JDBCUtil.ExcuteNoQuery(selectType, params);
 	}
+	
+	/**
+	 * 获取当前景点的类型列表，1为未关注，2为已关注
+	 * @param SceneId
+	 * @param mode
+	 * @return
+	 */
+	public List<Type> getSceneTypeList(Integer SceneId,int mode){
+		return null;
+	}
+	
+	/**
+	 * 获取用户打分的景点列表
+	 * @param user
+	 * @return
+	 */
+	public List<Scene> getUserRateSceneList(User user){
+		String getUserRateSceneList = "select * from scene s where s.scene_id in (select scene_id from rate where user_id = "+user.getUserId()+")";
+		List<Map<String,Object>> sceneMapList = JDBCUtil.executeQuery(getUserRateSceneList);
+		List<Scene> sceneList = new ArrayList<>();
+		sceneMapList.forEach(map->{
+			Scene scene = new Scene();
+			if (null != map.get("scene_id")) {
+				scene.setSceneId((int) map.get("scene_id"));
+			}
+			if (null != map.get("scene_name")) {
+				scene.setSceneName(map.get("scene_name").toString());
+			}
+			if (null != map.get("scene_sumary")) {
+				scene.setSceneSumamry(map.get("scene_sumary").toString());
+			}
+			if (null != map.get("scene_pic")) {
+				scene.setScenePic(map.get("scene_pic").toString());
+			}
+			sceneList.add(scene);
+		});
+		return sceneList;
+	}
+	
 	
 	
 }
