@@ -105,7 +105,7 @@ public class TypeDao {
 	 * @param typeId
 	 */
 	public void sceneUnConnType(Integer scenenId,Integer typeId) {
-		String sceneConnType = "insert into scene_type (scene_id,type_id) values (?,?)";
+		String sceneConnType = "delete from scene_type where scene_id = ? and type_id = ?";
 		JDBCUtil.ExcuteNoQuery(sceneConnType, new Object[] {scenenId,typeId});
 	}
 }
