@@ -28,9 +28,10 @@ public class SceneController {
 	 * @param scene
 	 * @return
 	 */
+	@GetMapping("/insertScene")
 	public String insertScene(Scene scene) {
 		sceneService.insertScene(scene);
-		return "";
+		return "redirect:/backstageSceneList";
 	}
 	
 	/**

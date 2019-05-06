@@ -136,20 +136,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</p>
 					</div>
 					<div class="user-modify">
-						<input type="button" onclick="disp_prompt()" value="显示一个提示框" />
+						<!-- <a href="" onclick="">修改用户名&gt;</a> -->
+						<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+							修改用户名
+						</button>
+					</div>
+					<!-- 修改用户名 -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+										&times;
+									</button>
+									<h4 class="modal-title" id="myModalLabel">
+										修改用户名
+									</h4>
+								</div>
+								<div class="modal-body">
+									<form class="form" role="form" action="editUserName" method="get">
+									  <div class="form-group">
+									    <label class="sr-only" for="name">用户名</label>
+									    <input type="text" name="username" class="form-control" id="name" placeholder="请输入用户名">
+									  </div>
+									  <button type="submit" class="btn btn-default" style="margin-left:500px">提交</button>
+									</form>
+								</div>
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal -->
 					</div>
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript">
-function disp_prompt(){
-    var name=prompt("输入的内容","");
-    if (name!=null && name!="") {
-        alert("你输入的是" + name);
-        
-    }
-}
-</script>
 		<div class="main w1200">
 			<!-- <div class="left" style="height:500px;">
 				<ul>
@@ -181,7 +199,7 @@ function disp_prompt(){
 				</div>
 			<div class="right">
 				<div class="tap">
-					<span>打分记录</span>
+					<span>系统消息</span>
 				</div>
 				<div class="container">
 					<div class="no-doc">

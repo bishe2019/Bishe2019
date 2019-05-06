@@ -127,11 +127,12 @@ public class UserController {
 	 * @param session
 	 * @return
 	 */
+	@GetMapping("/editUserName")
 	public String changeUsername(Integer userId,String username,HttpSession session) {
 		User user = (User) session.getAttribute("user");
 		userService.changeUsername(userId, username);
 		user.setUserName(username);
 		session.setAttribute("user", user);
-		return "";
+		return "redirect:/userCenter";
 	}
 }
