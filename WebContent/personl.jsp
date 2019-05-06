@@ -131,16 +131,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="user-account">
 						<p class="tip">下午好，${user.userName}</p>
 						<p class="account">
-							<span>帐户名：${user.email}</span>
-							<span>用户：${user.userName }  </span>
+							<span>邮箱名：${user.email}</span>
+							<span>用户名：${user.userName }  </span>
 						</p>
 					</div>
 					<div class="user-modify">
-						<a href="">修改资料&gt;</a>
+						<input type="button" onclick="disp_prompt()" value="显示一个提示框" />
 					</div>
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+function disp_prompt(){
+    var name=prompt("输入的内容","");
+    if (name!=null && name!="") {
+        alert("你输入的是" + name);
+        
+    }
+}
+</script>
 		<div class="main w1200">
 			<!-- <div class="left" style="height:500px;">
 				<ul>

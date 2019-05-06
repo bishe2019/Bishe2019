@@ -54,7 +54,7 @@ public class TypeController {
 	@GetMapping("/insertType")
 	public String insertType(String typeName) {
 		typeService.insertType(typeName);
-		return "";
+		return "redirect:/getTypelist";
 	}
 	
 	/**
@@ -65,7 +65,7 @@ public class TypeController {
 	@GetMapping("/deleteType")
 	public String deleteType(Integer typeId) {
 		typeService.deleteType(typeId);
-		return "";
+		return "redirect:/getTypelist";
 	}
 	
 	/**

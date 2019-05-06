@@ -76,9 +76,10 @@
         <li><a href="addmovie.jsp">添加景点</a></li>
       </ul>
       
-      <h3 class="am-icon-cart-plus"><em></em> <a href="./getTypelist">评论管理</a></h3>
+      <h3 class="am-icon-cart-plus"><em></em> <a href="./getTypelist">类型管理</a></h3>
       <ul>
         <li><a href="./getTypelist">类型列表</a></li>
+        <li><a href="addtype.jsp">添加景点</a></li>
       </ul>
       
       <h3 class="am-icon-users"><em></em> <a href="./getUserList">用户管理</a></h3>
