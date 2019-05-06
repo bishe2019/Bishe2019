@@ -113,4 +113,14 @@ public class UserDao {
 		JDBCUtil.ExcuteNoQuery(deleteUser, params);
 	}
 	
+	/**
+	 * 修改用户名
+	 * @param userId
+	 * @param username
+	 */
+	public void changeUsername(Integer userId,String username) {
+		String sql = "update user set user_name = ? where user_id = ?";
+		JDBCUtil.ExcuteNoQuery(sql, new Object[] {username,userId});
+	}
+	
 }

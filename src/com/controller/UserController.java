@@ -119,4 +119,19 @@ public class UserController {
 		session.removeAttribute("user");
 		return "redirect:/indexshow";
 	}
+	
+	/**
+	 * 更改用户名
+	 * @param userId
+	 * @param username
+	 * @param session
+	 * @return
+	 */
+	public String changeUsername(Integer userId,String username,HttpSession session) {
+		User user = (User) session.getAttribute("user");
+		userService.changeUsername(userId, username);
+		user.setUserName(username);
+		session.setAttribute("user", user);
+		return "";
+	}
 }

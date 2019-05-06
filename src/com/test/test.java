@@ -2,6 +2,8 @@ package com.test;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -28,6 +30,7 @@ import com.dao.CommentDao;
 import com.dao.RateDao;
 import com.dao.UserDao;
 import com.entity.Comment;
+import com.entity.Favor;
 import com.entity.Scene;
 import com.entity.User;
 import com.mysql.jdbc.Statement;
@@ -42,6 +45,8 @@ import com.util.StringUtils;
 public class test {
 	@Autowired
 	private static SessionFactory sessionFactory;
+	
+	UserDao userDao = new UserDao();
 	
 	public static void main(String[] args) {
 		MysqlDataSource dataSource = new MysqlDataSource();
@@ -85,7 +90,29 @@ public class test {
 			e.printStackTrace();
 		}
 		
-		
+	}
+	
+	/**
+	 * 获取用户喜爱列表
+	 * @return
+	 */
+	public List<Favor> searchUserLikeScene(){
+		String sql = "select * from rate where rate > 5";
+		List<Map<String,Object>> likeMapList = JDBCUtil.executeQuery(sql);
+		List<Favor> favorList = new ArrayList<>();
+		if (!likeMapList.isEmpty()) {
+			likeMapList.forEach(t->{
+				Favor favor = new Favor();
+				if (null != t.get("user_id")) {
+					favor.setUserId((int) t.get("user_id"));
+				}
+				if (null != t.get("scene_id")) {
+					favor.setSceneId((int) t.get("scene_id"));
+				}
+				favorList.add(favor);
+			});
+		}
+		return favorList;
 	}
 	
 

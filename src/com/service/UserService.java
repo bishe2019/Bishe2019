@@ -46,4 +46,13 @@ public class UserService {
 	public void deleteUser(Integer userId) {
 		userDao.deleteUser(userId);
 	}
+	
+	/**
+	 * 更改用户名
+	 * @param userId
+	 * @param usrename
+	 */
+	public void changeUsername(Integer userId,String username) {
+		userDao.changeUsername(userId, username);
+	}
 }
